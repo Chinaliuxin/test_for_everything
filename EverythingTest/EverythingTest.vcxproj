@@ -19,7 +19,13 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\Desktop\小公主\新建文件夹\unitTest.cpp" />
     <ClCompile Include="some.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\小公主\新建文件夹\algorithmTest.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\小公主\新建文件夹\stackTest.hpp" />
+    <ClInclude Include="..\..\..\..\Desktop\小公主\新建文件夹\string_and_list.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
