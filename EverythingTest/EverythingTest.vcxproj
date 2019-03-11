@@ -22,7 +22,8 @@
     <ClCompile Include="some.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stackAndQueue.h" />
+    <ClInclude Include="mySort.hpp" />
+    <ClInclude Include="stackAndQueue.hpp" />
     <ClInclude Include="stringAndList.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

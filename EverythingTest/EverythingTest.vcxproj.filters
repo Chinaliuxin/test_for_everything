@@ -23,7 +23,10 @@
     <ClInclude Include="stringAndList.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="stackAndQueue.h">
+    <ClInclude Include="mySort.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stackAndQueue.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
