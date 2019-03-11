@@ -51,7 +51,7 @@ namespace mysort {
 		
 	}
 
-
+#if 0//фа╠н
 	int quick_sort_part(int *a, int first, int last)
 	{
 		int temp = a[last];
@@ -84,6 +84,7 @@ namespace mysort {
 		}
 
 	}
+#endif
 
 	void testSysSort()
 	{
