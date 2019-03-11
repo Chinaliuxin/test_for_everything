@@ -18,18 +18,12 @@
     <ClCompile Include="some.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\小公主\新建文件夹\unitTest.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Desktop\小公主\新建文件夹\algorithmTest.hpp">
+    <ClInclude Include="stringAndList.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\小公主\新建文件夹\stackTest.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\小公主\新建文件夹\string_and_list.hpp">
+    <ClInclude Include="stackAndQueue.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
