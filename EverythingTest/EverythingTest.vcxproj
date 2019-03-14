@@ -27,6 +27,7 @@
     <ClInclude Include="stringAndList.hpp" />
     <ClInclude Include="template.hpp" />
     <ClInclude Include="Tree.hpp" />
+    <ClInclude Include="vector.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

@@ -47,7 +47,7 @@ namespace mysort {
 	}
 	void adjustHeap()
 	{
-		int max;
+		//int max;
 		
 	}
 

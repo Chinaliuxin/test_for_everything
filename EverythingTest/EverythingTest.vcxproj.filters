@@ -35,5 +35,8 @@
     <ClInclude Include="Tree.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="vector.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
