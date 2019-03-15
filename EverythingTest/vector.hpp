@@ -19,15 +19,15 @@ void test_vector()
 	int ret=atoi(s1.c_str());
 	vector<int> v1;
 	v1.reserve(10);
-	//transform(v.begin(), v.end(), v.begin(), [](int i) -> int{
-	//	if (i >2)
-	//		return --i;
-	//	else
-	//		return i;
-	//});
+	transform(v.begin(), v.end(), v.begin(), [](int i) -> int{
+		if (i >2)
+			return --i;
+		else
+			return i;
+	});
 	for (auto e : v)
 	{
 		printf("%d->",e);
 	}
 	cout << ret;
-}
+}	
