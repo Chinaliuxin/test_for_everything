@@ -10,9 +10,9 @@
 int main()
 
 {
-	test_vector();
+	//test_vector();
 	//test_template();
 	//mystack::test_solu_stack();
-	//mysort::testSysSort();
+	mysort::testSysSort();
 	int a;
 }
