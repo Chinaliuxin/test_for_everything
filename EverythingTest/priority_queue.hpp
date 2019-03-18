@@ -38,7 +38,9 @@ void testPriorityQueue()
 	// 如果要创建小堆，将第三个模板参数换成greater比较方式
 	vector<int> v = { 1,3,54,6,57,45,345,4 };
 	priority_queue<int, vector<int>, greater<int>> q2(v.begin(), v.end());
-	cout << q2.top() << endl;
+
+
+
 }
 
 void testMystack()

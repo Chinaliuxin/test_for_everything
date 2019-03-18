@@ -8,7 +8,13 @@
 void test_vector()
 {
 
-	vector <int> v{ 1,2,2,2,35,5 };
+	vector <int> v{ 1,2,3,4,5,6,7 };
+
+	//cout << *(v.rbegin()++);
+	printf("%d", sizeof(v));
+
+
+	printf("\n-------------------------\n");
 	string s1;
 	s1.resize(10);
 	transform(v.begin(), v.end(), s1.begin(), [](int i)->char{
