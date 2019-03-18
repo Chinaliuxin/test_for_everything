@@ -38,5 +38,11 @@
     <ClInclude Include="vector.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="smartPoint.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="priority_queue.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

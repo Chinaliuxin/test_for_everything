@@ -23,6 +23,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="mySort.hpp" />
+    <ClInclude Include="priority_queue.hpp" />
+    <ClInclude Include="smartPoint.hpp" />
     <ClInclude Include="stackAndQueue.hpp" />
     <ClInclude Include="stringAndList.hpp" />
     <ClInclude Include="template.hpp" />
