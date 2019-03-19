@@ -7,7 +7,6 @@ using namespace std;
 
 
 namespace mypoint {
-
 	template <class T>
 	class SharedPtr
 	{
@@ -22,6 +21,7 @@ namespace mypoint {
 				*_pCount = 0;
 			}
 		}
+
 		SharedPtr(const SharedPtr<T>& sp)//拷贝构造
 			:_ptr(sp._ptr)
 			, _pCount(sp._pCount)
@@ -113,8 +113,9 @@ namespace mypoint {
 	//	cout << sp3.UseCount() << endl;
 	//	return 0;
 	//}
-
 }
+
+
 void other(shared_ptr<vector<int>>& smart_p2)
 {
 	shared_ptr<vector<int>>smart_p4 = smart_p2;//赋值重载

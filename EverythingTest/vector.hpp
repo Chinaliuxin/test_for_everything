@@ -37,3 +37,33 @@ void test_vector()
 	}
 	cout << ret;
 }	
+vector<int>& vector_zero(vector <int> &v)
+{
+	vector<int>* b=new vector<int>();
+	int count = 0;
+	for (auto &e : v)
+	{
+		if (e == 0)
+			count++;
+		else
+			b->push_back(e);
+	}
+	for (int i = 0; i < count; i++)
+	{
+		b->push_back(0);
+	}
+	return *b;
+}
+void testVector_zero()
+{
+	vector<int> v = { 0,1,24,5,0,34,0,45,0,3 };
+	v=vector_zero(v);
+	for (auto e : v)
+	{
+		cout << e;
+	}
+	v.clear();
+	vector<int>().swap(v);
+	//v.shrink_to_fit();
+
+}

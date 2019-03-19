@@ -2,6 +2,8 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<vector>
+#include<unordered_map>
 using namespace std;
 class big {
 public:
@@ -240,5 +242,57 @@ void testListAdd()
 	//printflist.print();
 
 }
-
+void testString0318()//在命令行输入，请编写一个参数解析程序，实现将命令行各个参数解析出来。
+{
+	string input1="xcopy /s c:\\ d:\\";
+	//cin >> input1;
+	string k = " ";
+	 string input = k + input1;
+	string::iterator it = input.begin();
+	int count = 0;
+	int len = 0;
+	list<string> l;
+	while (it != input.end())
+	{
+		//if (it != input.end()&&*it=='\"')
+		//{
+		//	it++;
+		//	len++;
+		//	while (it != input.end()&&*it != '\"')
+		//	{
+		//		it++;
+		//		len++;
+		//	}
+		//	string str = input.substr(distance(input.begin(),it)-len+2,len-2);
+		//	len = 0;
+		//	l.push_back(str);
+		//	count++;
+		//}
+		if (it != input.end()&&*it == ' ')
+		{
+			it++;
+			len++;
+			while (it != input.end()&&*it != ' ')
+			{
+				it++;
+				len++;
+			}
+			string str = input.substr(distance(input.begin(), it) - len+1, len);
+			if (*(str.begin()) == '\"')
+			{
+				str.erase(str.end() - 1);
+				str.erase(str.begin());
+			}
+			len = 0;
+			l.push_back(str);
+			count++;
+		}
+	}
+	cout << count << endl;
+	cout << input;
+	for (auto e : l)
+	{
+		cout << e<<endl;
+	}
+}
 

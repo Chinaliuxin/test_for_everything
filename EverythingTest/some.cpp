@@ -15,9 +15,10 @@
 int main()
 
 {
-	testMypoint();//函数栈帧调用结束，t1的生命周期结束，new的vector 自动释放
-
-	testSharePtr();
+	testVector_zero();
+	//testMypoint();//函数栈帧调用结束，t1的生命周期结束，new的vector 自动释放
+	//testString0318();
+	//testSharePtr();
 	
 
 	//testPriorityQueue();
