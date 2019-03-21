@@ -36,23 +36,28 @@ void test_vector()
 		printf("%d->",e);
 	}
 	cout << ret;
+	v1.reserve(20);
+	v1.resize(18);
+	cout << "v1的容量" << v1.capacity() << "\n";
+	cout << "v1的size" << v1.size();
+
 }	
-vector<int>& vector_zero(vector <int> &v)
+vector<int> vector_zero(vector <int> &v)//把数组中的0后移
 {
-	vector<int>* b=new vector<int>();
+	vector<int>b;
 	int count = 0;
 	for (auto &e : v)
 	{
 		if (e == 0)
 			count++;
 		else
-			b->push_back(e);
+			b.push_back(e);
 	}
 	for (int i = 0; i < count; i++)
 	{
-		b->push_back(0);
+		b.push_back(0);
 	}
-	return *b;
+	return b;
 }
 void testVector_zero()
 {

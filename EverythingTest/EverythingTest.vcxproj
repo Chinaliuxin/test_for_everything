@@ -22,6 +22,7 @@
     <ClCompile Include="some.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Derived.hpp" />
     <ClInclude Include="mySort.hpp" />
     <ClInclude Include="priority_queue.hpp" />
     <ClInclude Include="smartPoint.hpp" />

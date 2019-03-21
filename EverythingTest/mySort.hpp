@@ -19,7 +19,6 @@ namespace mysort {
 	};
 	int quickSortPart(int a[],int left,int right)
 	{
-
 		int temp = a[right];
 		while (left<right)
 		{
@@ -117,6 +116,23 @@ namespace mysort {
 	}
 #endif
 
+	int BinFind(int a[], int size,int key)//ÉýÐò2·Ö²éÕÒ
+	{
+		int left = 0;
+		int right =size - 1;
+
+		while (left <= right)
+		{
+			int mid = (left + right) >> 1;
+			if (a[mid] < key)
+				left = mid + 1;
+			if (a[mid] > key)
+				right = mid - 1;
+			if (a[mid] == key)
+				return mid;
+		}
+		return -1;
+	}
 	void testSysSort()
 	{
 		//vector<int> a = {1,8,2,890,102,-3,90,98 };
@@ -134,6 +150,8 @@ namespace mysort {
 		//{
 		//	cout << e<<",";
 		//}
+		int a[] = { 1,2,3,4,5,6,7,7,8,8,9,9,9 };
+		cout << BinFind(a, sizeof(a) / sizeof(a[0]), 7) << endl;
 
 		int a3[8] = { 1,8,2,890,102,-3,90,98 };
 		heapSort(a3, 8);
@@ -142,4 +160,5 @@ namespace mysort {
 			cout << e<<",";
 		}
 	}
+
 }

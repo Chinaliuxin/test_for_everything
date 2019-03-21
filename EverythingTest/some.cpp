@@ -9,13 +9,15 @@
 #include"vector.hpp"
 #include"priority_queue.hpp"
 #include"smartPoint.hpp"
-
-
+#include<deque>
+#include"Derived.hpp"
 
 int main()
 
 {
-	testVector_zero();
+	D::test();
+
+	//testVector_zero();
 	//testMypoint();//函数栈帧调用结束，t1的生命周期结束，new的vector 自动释放
 	//testString0318();
 	//testSharePtr();
@@ -28,4 +30,5 @@ int main()
 	//mystack::test_solu_stack();
 	//mysort::testSysSort();
 	int a;
+	int &b = a;
 }
