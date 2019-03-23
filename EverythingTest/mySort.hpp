@@ -3,6 +3,7 @@
 #include<stack>
 #include<string>
 #include<algorithm>
+
 using namespace std;
 
 namespace mysort {

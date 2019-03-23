@@ -32,3 +32,24 @@ void test_template()
 	A<char> first;
 	A<int> second;
 }
+
+struct union1
+{
+
+	union 
+	{
+		int a;
+		union
+		{
+			int b;
+			int c;
+		};
+	};
+	int aaa;
+	//char aa;
+};
+struct union2
+{
+	int a1;
+	int b2;
+};

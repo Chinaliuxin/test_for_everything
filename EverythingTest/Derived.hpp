@@ -1,6 +1,43 @@
 #include<iostream>
+
+
 using namespace std;
 namespace D {
+	class singleton
+	{
+	protected:
+		singleton()
+		{}
+	private:
+		static singleton* p;
+	public:
+		static singleton* initance()
+		{
+			return p;
+		}
+	};
+	singleton* singleton::p = new singleton;
+
+	template<class T>
+	class single {
+	public:
+		static T* initance()
+		{
+			return p;
+		}
+	private:
+		static T* p;
+		single() {};
+
+	};
+	template<class T>
+	T* single<T>::p = new T;
+
+
+	//singleton* singleton::initance()
+	//{
+	//	return p;
+	//}//饿汉模式
 	class Base {
 	public:
 		Base(int b1 = 0,int b2 = 0)
@@ -65,8 +102,30 @@ namespace D {
 	int Derive::d2 = 1;
 
 
+	class A {
+	public:
+		A()
+		{
+			cout << "A构造" << endl;
+
+		}
+		const int b1 = 0;
+		const static int b = 1;
+		;
+	};
+	class B  {
+	public:
+		B()
+		{
+			cout << "B";
+		}
+		A a;
+	};
 	void test()
 	{
+		A* pa=NULL;
+		cout << pa->b  ;//pa->b1
+		B B();
 		Base B1;
 		Base *p = &B1;
 		Base B2(p);//这种写法很丑陋，只是为了测试

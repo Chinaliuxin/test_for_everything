@@ -2,7 +2,8 @@
 #include<vector>
 #include<iostream>
 #include<list>
-//priority_queue(const Compare& x = Compare(), const Container& y = Container() );
+//priority_queue(const Compare& x = Compare(), const Container& y = Container() );
+
 using namespace std;
 namespace mydeque {
 	template<class T, class Con = ::std::deque<T>>
@@ -18,7 +19,9 @@ namespace mydeque {
 		bool Empty()const { return _c.empty(); }
 	private:
 		Con _c;
-	};}
+	};
+}
+
 void testPriorityQueue()
 {
 	//优先级队列默认是大堆

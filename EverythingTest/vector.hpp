@@ -72,3 +72,14 @@ void testVector_zero()
 	//v.shrink_to_fit();
 
 }
+void  array_point()
+{
+	int a[] = { 1,2,3,4,5 };
+	int* p[] = { a,a + 1,a + 2,a + 2 };
+	int **q = p;
+	cout << *(p[0] + 1) << endl;
+	cout << **(q + 2);
+	long long a1 = 3;
+	printf("%d", a1);
+
+}
