@@ -139,23 +139,23 @@ void testSharePtr()
 
 	//如果2个shared_ptr指针循环调用，即A对象的指针指向B，B对象的指针指向A，则会循环引用，很好解决，把其中一个指针换成weak_ptr
 }
-template <class T>
-class testMypointClass
-{
-public:
-	testMypointClass(T*p)
-		:smart_p1(p)
-	{
-		smart_p1->pop_back();
-		cout << (*smart_p1)[2];
-
-	}
-private:
-	::mypoint::SharedPtr<vector<int>> smart_p1;
-};
-void testMypoint()
-{
-	vector<int> * p2 = new vector<int>();
-	*p2 = { 1,2,3,4 };
-	testMypointClass<vector<int>> t1(p2);
-}
+//template <class T>
+//class testMypointClass
+//{
+//public:
+//	testMypointClass(T*p)
+//		:smart_p1(p)
+//	{
+//		smart_p1->pop_back();
+//		cout << (*smart_p1)[2];
+//
+//	}
+//private:
+//	::mypoint::SharedPtr<vector<int> > smart_p1;
+//};
+//void testMypoint()
+//{
+//	vector<int> * p2 = new vector<int>();
+//	*p2 = { 1,2,3,4 };
+//	testMypointClass<vector<int>> t1(p2);
+//}

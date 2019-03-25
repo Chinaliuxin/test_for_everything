@@ -64,8 +64,19 @@ namespace mysort {
 		}
 		if (max != i)
 		{
-			swap(a[i], a[max]);
+			::std::swap(a[i], a[max]);
 			adjustHeap(a, max, size);
+		}
+	}
+	void bubbleSprt(int a[], int size)
+	{
+		for (int i = 0; i < size - 1; i++)
+		{
+			for (int j = 0; j = size - i - 1; j++)
+			{
+				if (a[i] > a[j])
+					::std::swap(a[i], a[j]);
+			}
 		}
 	}
 	void heapSort(int a[],int size)
