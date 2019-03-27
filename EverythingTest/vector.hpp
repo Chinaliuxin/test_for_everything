@@ -83,3 +83,85 @@ void  array_point()
 	printf("%d", a1);
 
 }
+
+vector<vector<int> > subsets(vector<int>& v)//求数组的子集
+{
+	int max =1<< v.size();//比如3个数字的数组  max变为8，
+	vector< vector<int> > ret;
+
+	for (int i = 0; i < max; i++)
+	{
+		vector<int>temp;
+		int index = 0;
+		int flag = i;//flag负责遍历数组，从000，001,010，到111
+		while (flag > 0)
+		{
+			if (flag & 1)//和00000--01与取得最低位
+			{
+				temp.push_back(v[index]);
+			}
+			index++;
+			flag = flag >> 1;
+		}
+		ret.push_back(temp);
+	}
+	return ret;
+
+}
+void testSubSet()//求一个数组的子集
+{
+	vector<int > v = { 1,2,3,4,5};
+	vector<vector<int> > ret=subsets(v);
+	for (auto &e : ret)
+	{
+		cout << "{";
+		for (auto &ee : e)
+		{
+			if (ee != *(e.end()-1))
+				cout << ee << ",";
+			else
+				cout << ee;
+		}
+		cout << "}"<<endl;
+	}
+	int k = 0;
+	for (auto e : ret)
+	{
+		int temp = 1;
+		for (auto ee : e)
+		{
+			temp = temp * ee;
+			
+		}
+		if (temp < 50)
+			k++;
+	}
+	cout << "----------------------\n "<< k-1;
+}
+
+void reverseOddAndEven(vector<int> & v)//把奇数放数组前面，偶数放后面
+
+{
+	int left = 0;
+	int right = v.size() - 1;
+	while (left < right)
+	{
+		while ((v[left] & 1 )== 1)//奇数最低位为1
+			left++;
+		while ((v[right] & 1) == 0)
+			right--;
+		int temp = v[left];
+		v[left] = v[right];
+		v[right] = temp;
+	}
+}
+void testreverseOddAndEven()
+{
+	vector<int> v = { 1,2,3,4,5,6,7,8 };      
+	reverseOddAndEven(v);
+	for (auto e : v)
+	{
+		cout << e;
+	}
+
+}

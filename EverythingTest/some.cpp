@@ -43,7 +43,8 @@ void main1() {
 int main()
 
 {
-	main1();
+	//test_list1();
+	//main1();
 	//D::test();
 
 	//testVector_zero();
@@ -59,13 +60,17 @@ int main()
 	//mystack::test_solu_stack();
 	//mysort::testSysSort();
 	//struct union1  n111;
-	//
+	//poly::test();
+	//testreverseOddAndEven();
 	int a=3;
 	//if (++a = 4)
 	//{
 	//	cout <<sizeof(n111);
 	//}
+	char st[] = "S\066\nAB";
+	cout << sizeof(st);
+	//testSubSet();
 	string s;
 	
 	int &b = a;
-}
+				}

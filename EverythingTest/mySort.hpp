@@ -68,14 +68,14 @@ namespace mysort {
 			adjustHeap(a, max, size);
 		}
 	}
-	void bubbleSprt(int a[], int size)
+	void bubbleSort(int a[], int size)
 	{
 		for (int i = 0; i < size - 1; i++)
 		{
-			for (int j = 0; j = size - i - 1; j++)
+			for (int j = 0; j <size - i - 1; j++)
 			{
-				if (a[i] > a[j])
-					::std::swap(a[i], a[j]);
+				if (a[j] > a[j+1])
+					::std::swap(a[j+1], a[j]);
 			}
 		}
 	}
@@ -166,7 +166,8 @@ namespace mysort {
 		cout << BinFind(a, sizeof(a) / sizeof(a[0]), 7) << endl;
 
 		int a3[8] = { 1,8,2,890,102,-3,90,98 };
-		heapSort(a3, 8);
+		//heapSort(a3, 8);
+		bubbleSort(a3, 8);
 		for (auto e:a3)
 		{
 			cout << e<<",";

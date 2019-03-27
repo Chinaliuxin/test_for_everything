@@ -6,10 +6,12 @@ namespace D {
 	class singleton
 	{
 	protected:
-		singleton()
-		{}
+		singleton() {};
+		singleton(const singleton & s) = delete;
+		singleton& operator =(const singleton &s) = delete;
 	private:
 		static singleton* p;
+
 	public:
 		static singleton* initance()
 		{
@@ -141,5 +143,37 @@ namespace D {
 		Derive D2(D1);
 		cout <<"派生类的智能指针："<< D2.getPoint().use_count() << endl;//基于浅拷贝，D1,D2继承的shared_ptr指向一段空间
 		cout << sizeof(B1);
+	}
+}
+
+namespace poly {
+	class Father {
+	public:
+
+		virtual void fun1() = 0;
+		//{ cout << "父类" << endl; }
+	};
+
+
+	class Son :public Father {
+		virtual void fun1() { cout << "儿子"; }
+
+	};
+	class Daughter :public Father {
+		void fun1() {
+			cout << "女儿";
+		}
+	};
+
+	void test()
+	{
+		Son son;
+		//Father f;
+		Daughter daughter;
+		Father* p = &son;
+		p->fun1();
+		p = &daughter;
+		p->fun1();
+
 	}
 }

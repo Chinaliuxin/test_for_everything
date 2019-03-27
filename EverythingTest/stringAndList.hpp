@@ -4,7 +4,7 @@
 #include<string>
 #include<vector>
 #include<unordered_map>
-using namespace std;
+#include <unordered_set>space std;
 class big {
 public:
 	bool operator()(int a, int b)
@@ -108,7 +108,48 @@ public:
 		}
 		cout << "nullptr";
 	}
-
+	int listSize()
+	{
+		int count = 0;
+		PNode cur = phead;
+		while (cur != nullptr)
+		{
+			count++;
+			cur = cur->next;
+		}
+		return count;
+	}
+	void listSort()//对结点进行冒泡排序
+	{
+		if (phead->next == nullptr || phead == nullptr)//保证链表结点数大于等于2
+			return;
+		int size = listSize();
+		PNode pre, cur, next;
+		pre = new listNode(-1);
+		pre->next = phead;
+		cur = pre->next;
+		next = cur->next;
+		/*for(int i=0;i<size-1;i++)
+		{*/
+	/*		for (int j=0;j<size-1;j++ )
+			{
+				
+				if (cur->data > next->data)
+				{*/
+					cur = next->next;
+					pre->next = next;
+					next->next = cur;
+					
+					PNode temp = next;
+					next = cur;
+					cur = temp;
+				//}
+				//pre = pre->next; cur = cur->next;
+				//if (next!=nullptr)
+				//	next = next->next;
+			/*}*/
+		
+	}
 	~mylist()
 	{//析构
 		_destroy();
@@ -201,9 +242,15 @@ void test_zhuanhaun()
 
 void test_list1()
 {
-	//mylist l;
-	//l.push_back(1);
-	////l.push_back(2);
+	mylist l;
+	l.push_back(4);
+	l.push_back(3);
+	l.push_back(2);
+	l.push_back(1);
+	l.print();
+	cout << l.listSize()<<endl;
+	l.listSort();
+	l.print();
 	//l.pop_back();
 	//l.print();
 	//mylist* l2=new mylist();
@@ -224,7 +271,7 @@ void test_list1()
 void testListAdd()
 {
 	mylist listOne, listTwo;
-	listOne.push_back(1);
+	listOne.push_back(4);
 	listOne.push_back(2);
 	listOne.push_back(2);
 	listOne.push_back(3);
