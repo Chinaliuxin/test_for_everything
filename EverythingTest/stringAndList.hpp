@@ -289,7 +289,9 @@ void testListAdd()
 	//printflist.print();
 
 }
-void testString0318()//在命令行输入，请编写一个参数解析程序，实现将命令行各个参数解析出来。
+//在命令行输入，请编写一个参数解析程序，实现将命令行各个参数解析出来。
+
+void testString0318()
 {
 	string input1="xcopy /s c:\\ d:\\";
 	//cin >> input1;

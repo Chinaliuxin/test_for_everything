@@ -157,11 +157,30 @@ void reverseOddAndEven(vector<int> & v)//把奇数放数组前面，偶数放后面
 }
 void testreverseOddAndEven()
 {
-	vector<int> v = { 1,2,3,4,5,6,7,8 };      
+	vector<int> v = { 1,2,3,4 };
+
 	reverseOddAndEven(v);
 	for (auto e : v)
 	{
 		cout << e;
 	}
 
+}
+void getvector132(vector<int>& v)
+{
+	int size = v.size();
+	for (int i = 0; i < size - 2; i++)
+	{
+		for (int j = i + 1; j < size - 1; j++)
+		{
+			for (int k = j + 1; k < size; k++)
+				cout << "{" << v[i] << "," << v[j] << "," << v[k] << "}" << endl;
+		}
+	}
+}
+
+void testgetvector132()
+{
+	vector<int> v = { 1,2,3,4,4,6};
+	getvector132(v);
 }

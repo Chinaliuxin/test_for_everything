@@ -11,6 +11,7 @@
 #include"smartPoint.hpp"
 #include<deque>
 #include"Derived.hpp"
+#include"leetcodeString.hpp"
 void main1() {
 	string s1, s2;
 	string out;
@@ -43,6 +44,7 @@ void main1() {
 int main()
 
 {
+	teststringAdd20();
 	//test_list1();
 	//main1();
 	//D::test();
@@ -67,10 +69,11 @@ int main()
 	//{
 	//	cout <<sizeof(n111);
 	//}
+	testgetvector132();
 	char st[] = "S\066\nAB";
 	cout << sizeof(st);
 	//testSubSet();
 	string s;
 	
 	int &b = a;
-				}
+}

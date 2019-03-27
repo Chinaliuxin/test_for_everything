@@ -23,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Derived.hpp" />
+    <ClInclude Include="leetcodeString.hpp" />
     <ClInclude Include="mySort.hpp" />
     <ClInclude Include="priority_queue.hpp" />
     <ClInclude Include="smartPoint.hpp" />
