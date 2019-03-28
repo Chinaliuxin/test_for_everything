@@ -181,6 +181,8 @@ void getvector132(vector<int>& v)
 
 void testgetvector132()
 {
+	int a[] = { 1,2,4,34,4 };
+	sort(a, a+4);
 	vector<int> v = { 1,2,3,4,4,6};
 	getvector132(v);
 }

@@ -68,17 +68,7 @@ namespace mysort {
 			adjustHeap(a, max, size);
 		}
 	}
-	void bubbleSort(int a[], int size)
-	{
-		for (int i = 0; i < size - 1; i++)
-		{
-			for (int j = 0; j <size - i - 1; j++)
-			{
-				if (a[j] > a[j+1])
-					::std::swap(a[j+1], a[j]);
-			}
-		}
-	}
+
 	void heapSort(int a[],int size)
 	{
 		for (int i = size / 2 - 1; i >=0; i--)
@@ -91,7 +81,17 @@ namespace mysort {
 			adjustHeap(a, 0, i);
 		}
 	}
-
+	void bubbleSort(int a[], int size)
+	{
+		for (int i = 0; i < size - 1; i++)
+		{
+			for (int j = 0; j < size - i - 1; j++)
+			{
+				if (a[j] > a[j + 1])
+					::std::swap(a[j + 1], a[j]);
+			}
+		}
+	}
 
 #if 0//ÆÁ±Î
 	int quick_sort_part(int *a, int first, int last)
@@ -165,7 +165,7 @@ namespace mysort {
 		int a[] = { 1,2,3,4,5,6,7,7,8,8,9,9,9 };
 		cout << BinFind(a, sizeof(a) / sizeof(a[0]), 7) << endl;
 
-		int a3[8] = { 1,8,2,890,102,-3,90,98 };
+		int a3[8] = { 1,8,2,890,102,-3,90,98};
 		//heapSort(a3, 8);
 		bubbleSort(a3, 8);
 		for (auto e:a3)
@@ -174,4 +174,19 @@ namespace mysort {
 		}
 	}
 
+}
+void bubbleSort(int a[],int size)
+{
+	for (int i = 0; i < size - 1;i++)//Ê®¸öÊý,
+	{
+		for (int j = 0; i < size - i - 1; j++)
+		{
+			if (a[j] > a[j + 1])
+			{
+				a[j] = a[j] -a[j +1];
+				a[j + 1] = a[j] + a[j + 1];
+				a[j] = a[j + 1] - a[j];
+			}
+		}
+	}
 }

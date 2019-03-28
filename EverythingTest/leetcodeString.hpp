@@ -30,29 +30,51 @@ void myReverse(string& s)
 	}
 }
 //°Ñ we are student ±ä³É we%20are%20student
-void stringAdd20(string s)
-{
-	int count = 0;
-	for (auto e : s)
-	{
-		if (e == ' ')
-			count++;
-	}
-	string ret;
-	ret.resize(count + s.size());
-	for (int j = s.size() - 1;j>=0; j--)
-	{
-
-		ret.insert(0, cur);
-	}
-}
+//void stringAdd20(string s)
+//{
+//	int count = 0;
+//	for (auto e : s)
+//	{
+//		if (e == ' ')
+//			count++;
+//	}
+//	string ret;
+//	ret.resize(count + s.size());
+//	for (int j = s.size() - 1;j>=0; j--)
+//	{
+//
+//		ret.insert(0, cur);
+//	}
+//}
 void teststringAdd20()
 {
 	string s;
 	//string ss="ww";
 	//s.insert(0, ss);
 	getline(cin, s);
-	stringAdd20(s);
 	cout << s;
+
+}
+
+
+void  findOnlyOne()
+{
+	int a = 1;
+	int b = 2;
+	string str;
+	while (cin >> str)
+	{
+		unordered_map<char, int> m;
+		for (auto e : str)
+		{
+			m[e] ++;
+		}
+		for (auto e : m)
+		{
+			if (e.second == 1)
+				cout << e.first;
+		}
+	}
+	cout << "-1";
 
 }

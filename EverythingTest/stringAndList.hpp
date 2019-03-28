@@ -4,7 +4,8 @@
 #include<string>
 #include<vector>
 #include<unordered_map>
-#include <unordered_set>space std;
+#include <unordered_set>
+using namespace std;
 class big {
 public:
 	bool operator()(int a, int b)

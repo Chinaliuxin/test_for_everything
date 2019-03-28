@@ -1,6 +1,5 @@
 #include <iostream>
 #include<mutex>
-
 #include"template.hpp"
 #include"stringAndList.hpp"
 #include"stackAndQueue.hpp"
@@ -44,6 +43,12 @@ void main1() {
 int main()
 
 {
+	void fun(int, int);
+	void (*pf) (int d,int);
+	pf = fun;//
+
+	string s ="123";
+	findOnlyOne();
 	teststringAdd20();
 	//test_list1();
 	//main1();
@@ -69,11 +74,11 @@ int main()
 	//{
 	//	cout <<sizeof(n111);
 	//}
+	cout << "1111111111111111111111" << "\n";
 	testgetvector132();
 	char st[] = "S\066\nAB";
-	cout << sizeof(st);
+	cout << sizeof(st) << endl<<strlen(st);
 	//testSubSet();
-	string s;
 	
 	int &b = a;
 }
