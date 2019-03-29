@@ -38,17 +38,23 @@ void main1() {
 	reverse(out.begin(), out.end());
 	cout << out;
 }
-
+struct lll{
+	int a;
+	int b;
+};
 
 int main()
-
 {
-	void fun(int, int);
-	void (*pf) (int d,int);
-	pf = fun;//
-
+	//printf("error%s", strerror(errno));
+	//void fun(int, int);
+	//void (*pf) (int d,int);
+	//pf = fun;
+	vector<struct lll> v;
+	v.resize(1);
+	v[0].a = 1;
+	v[0].b = 2;
 	string s ="123";
-	findOnlyOne();
+	//findOnlyOne();
 	teststringAdd20();
 	//test_list1();
 	//main1();
@@ -77,8 +83,8 @@ int main()
 	cout << "1111111111111111111111" << "\n";
 	testgetvector132();
 	char st[] = "S\066\nAB";
-	cout << sizeof(st) << endl<<strlen(st);
+	char d[] = { '1','2','35' };
+	cout << sizeof(st) << endl<<strlen(st)<<strlen(d);
 	//testSubSet();
-	
 	int &b = a;
 }
