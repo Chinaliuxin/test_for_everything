@@ -50,6 +50,8 @@ int main()
 	//void (*pf) (int d,int);
 	//pf = fun;
 	vector<struct lll> v;
+	const char* ssr = "12345";
+	cout << mystrlen(ssr);
 	v.resize(1);
 	v[0].a = 1;
 	v[0].b = 2;

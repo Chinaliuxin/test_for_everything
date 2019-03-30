@@ -56,7 +56,30 @@ void teststringAdd20()
 
 }
 
-
+char* myStrcoy(char* dest, const char*src)//src复制到dest
+{
+	if (dest == NULL || src == NULL)
+	{
+		return NULL;
+	}
+	char* destCopy = dest;//保持dest首地址，方便返回
+	while (*src != '/0')
+	{
+		*dest = *src;
+	}
+	*dest = *src;//赋值'/0'
+	return destCopy;
+}
+int mystrlen(const char*str)
+{
+	int count = 0;
+	while (*str != '\0')
+	{
+		str++;
+		count++;
+	}
+	return count;
+}
 void  findOnlyOne()
 {
 	int a = 1;
