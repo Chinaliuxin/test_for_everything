@@ -25,6 +25,7 @@
     <ClInclude Include="Derived.hpp" />
     <ClInclude Include="leetcodeString.hpp" />
     <ClInclude Include="mySort.hpp" />
+    <ClInclude Include="mystring.hpp" />
     <ClInclude Include="priority_queue.hpp" />
     <ClInclude Include="smartPoint.hpp" />
     <ClInclude Include="stackAndQueue.hpp" />

@@ -9,6 +9,7 @@
 #include"priority_queue.hpp"
 #include"smartPoint.hpp"
 #include<deque>
+#include<set>
 #include"Derived.hpp"
 #include"leetcodeString.hpp"
 void main1() {
@@ -42,9 +43,37 @@ struct lll{
 	int a;
 	int b;
 };
+class Solution1{
+public:
+	int thirdMax(vector<int>& nums) {
+		set<int, greater<int>> sets(nums.begin(), nums.end());
+		auto it = sets.begin();
+		if (sets.size() <= 2)
+			return *it;
+		if (sets.size() >= 3)
+		{
+			it++;
+			it++;
+			return *it;
+		}
 
+	}
+};
+
+void test111()
+{
+	Solution1 s;
+	vector <int> v;
+	v.resize(5,2);
+	v.push_back(3);
+	v.push_back(232);
+	v.push_back(234545);
+	cout<<s.thirdMax(v);
+}
 int main()
 {
+	testzuoyi();
+	test111();
 	//printf("error%s", strerror(errno));
 	//void fun(int, int);
 	//void (*pf) (int d,int);

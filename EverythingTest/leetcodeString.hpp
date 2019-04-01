@@ -101,3 +101,45 @@ void  findOnlyOne()
 	cout << "-1";
 
 }
+
+
+int singleNumber(int* nums, int numsSize) {//找出只出现一次的数字
+	int k = nums[0];
+	for (int i = 1; i < numsSize; i++) {
+		k = (k ^ nums[i]);
+	}
+	return k;
+}
+
+void testsinglenumber()
+{
+	int nums[] = { 5, 6, 5, 6, 8, 7, 7 };
+	int number = singleNumber(nums, 7);
+	printf("The single number is %d.\n", number);
+}
+
+void zuoyiVector(vector <int> & v, int k)//
+{
+	if (v.size() <= 1)
+		return;
+
+	k = k % v.size();
+	for (int j = 0; j < k; j++)
+	{
+		int temp = v[0];
+		for (int i = 0; i <= v.size() - 2; i++)//左移一次
+		{
+			v[i] = v[i + 1];
+		}
+		v[v.size() - 1] = temp;
+	}
+}
+void testzuoyi()
+{
+	vector<int> v = { 1,2,3,4,5 };
+	zuoyiVector(v, 3);
+	for (auto e : v)
+	{
+		cout << e;
+	}
+}
