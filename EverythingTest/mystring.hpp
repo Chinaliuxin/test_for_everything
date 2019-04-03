@@ -232,6 +232,7 @@ public:
 		assert(pos > 0 && pos < _size);
 		return _str[pos];
 	}
+
 	bool operator>(const String& s) const
 	{
 		char* _str_tmp = _str;

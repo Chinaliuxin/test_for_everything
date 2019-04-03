@@ -62,6 +62,7 @@ public:
 
 void test111()
 {
+	printf("k=================================================");
 	Solution1 s;
 	vector <int> v;
 	v.resize(5,2);
@@ -72,6 +73,14 @@ void test111()
 }
 int main()
 {
+	vector<vector<int> > r(10, vector<int>(2, 0));
+	for (auto e : r);
+	{
+		for (auto ee : e)
+		{
+
+		}
+	}
 	testzuoyi();
 	test111();
 	//printf("error%s", strerror(errno));
