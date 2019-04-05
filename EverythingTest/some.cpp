@@ -74,11 +74,13 @@ void test111()
 int main()
 {
 	vector<vector<int> > r(10, vector<int>(2, 0));
-	for (auto e : r);
+	int a [3][3];
+	memset(&a[0][0], 0, sizeof(a));
+	for (int i = 0; i < 3; i++)
 	{
-		for (auto ee : e)
+		for (int j = 0; j < 3; j++)
 		{
-
+			cout << a[i][j];
 		}
 	}
 	testzuoyi();
@@ -115,7 +117,7 @@ int main()
 	//struct union1  n111;
 	//poly::test();
 	//testreverseOddAndEven();
-	int a=3;
+	int aa=3;
 	//if (++a = 4)
 	//{
 	//	cout <<sizeof(n111);
@@ -126,5 +128,5 @@ int main()
 	char d[] = { '1','2','35' };
 	cout << sizeof(st) << endl<<strlen(st)<<strlen(d);
 	//testSubSet();
-	int &b = a;
+	int &b = aa;
 }
