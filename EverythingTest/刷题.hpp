@@ -89,6 +89,9 @@ int fir(int first, int second, int num)
 using namespace std;
 int mafin()
 {
+	int a = 1;
+	++a += a++;
+	a++ += a++;
 	string s = "0123456789";
 	string s2 = "sdf";
 	s2 += s;

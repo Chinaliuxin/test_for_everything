@@ -71,8 +71,14 @@ void test111()
 	v.push_back(234545);
 	cout<<s.thirdMax(v);
 }
+void testAboutVector()
+{
+	int a[2][3] = { 1,2,3,4,5,6 };
+	cout << "第二行第二个元素"<<a[1][1]<<"地址："<<&a[1][1]<<"等于"<<*(a+1)+1<<"等于"<<a+4;
+}
 int main()
 {
+	testAboutVector();
 	vector<vector<int> > r(10, vector<int>(2, 0));
 	int a [3][3];
 	memset(&a[0][0], 0, sizeof(a));
