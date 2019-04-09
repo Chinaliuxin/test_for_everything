@@ -1,3 +1,4 @@
+#include"刷题.hpp"
 #include <iostream>
 #include<mutex>
 #include"template.hpp"
@@ -62,6 +63,7 @@ public:
 
 void test111()
 {
+	
 	printf("k=================================================");
 	Solution1 s;
 	vector <int> v;
@@ -76,8 +78,14 @@ void testAboutVector()
 	int a[2][3] = { 1,2,3,4,5,6 };
 	cout << "第二行第二个元素"<<a[1][1]<<"地址："<<&a[1][1]<<"等于"<<*(a+1)+1<<"等于"<<a+4;
 }
+class __declspec(novtable) c
+{
+	virtual ~c() {};
+	int x;
+};
 int main()
 {
+	printSanjiao(9);
 	testAboutVector();
 	vector<vector<int> > r(10, vector<int>(2, 0));
 	int a [3][3];

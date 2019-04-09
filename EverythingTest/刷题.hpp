@@ -45,7 +45,22 @@ void fun(int num)
 //	fclose(fp);
 //	return 0;
 //}
-
+//打印三角形
+void printSanjiao(int n)//n是行数。1,3,5,7
+{
+	for (int i = 0; i < n; i++)
+	{
+		for (int j = 0; j < n - i-1; j++)
+		{
+			cout << " ";
+		}
+		for (int k = 0; k < 2 * i + 1; k++)
+		{
+			cout << "*";
+		}
+		cout << endl;
+	}
+}
 void vectorfor(vector<int> &v1, vector<int> & v2)
 {
 	for (int i = 0; i < v1.size(); i++)
@@ -91,7 +106,7 @@ int mafin()
 {
 	int a = 1;
 	++a += a++;
-	a++ += a++;
+	//a++ += a++;
 	string s = "0123456789";
 	string s2 = "sdf";
 	s2 += s;
@@ -100,6 +115,7 @@ int mafin()
 	cout << s[3];
 	cout << s[8];
 	system("pause");
+	return 0;
 }
 //int main() {
 //	string str,str2;
@@ -187,3 +203,61 @@ int mafin()
 //	cout << strlen(xx);
 //	
 //}
+/*
+// Sample code to perform I/O:
+
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int num;
+	cin >> num;										// Reading input from STDIN
+	cout << "Input number is " << num << endl;		// Writing output to STDOUT
+}
+
+// Warning: Printing unwanted or ill-formatted data to output will cause the test cases to fail
+*/
+
+// Write your code here
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+void 数之和最多次数()
+{
+	int num;//数字个数
+	int n;
+	vector<int> v1;//存输入数
+	while (cin >> n)
+	{
+
+		v1.push_back(n);
+	}
+	vector<int> v2;//存放相加数
+	for (int i = 0; i < v1.size(); i++)
+	{
+		for (int j = i + 1; j < v1.size(); j++)
+		{
+			v2.push_back(v1[i] + v1[j]);
+		}
+	}
+	unordered_map<int, int> map;
+	for (int i = 0; i < v2.size(); i++)
+	{
+		map[v2[i]]++;
+	}
+	auto it = map.begin();
+	int max = 0;
+	for (; it != map.end(); it++)
+	{
+		if (it->second > max)
+		{
+			max = it->second;//找到出现最多的次数
+		}
+	}
+	for (it = map.begin(); it != map.end(); it++)
+	{
+		if (it->second == max)
+			cout << it->first << endl;
+	}
+}
