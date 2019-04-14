@@ -85,8 +85,9 @@ class __declspec(novtable) c
 };
 int main()
 {
-	printSanjiao(9);
-	testAboutVector();
+	const char * ch1 = "1234";
+	const char * ch2 = "1234";
+	printf("%p,%p", ch1, ch2);
 	vector<vector<int> > r(10, vector<int>(2, 0));
 	int a [3][3];
 	memset(&a[0][0], 0, sizeof(a));
@@ -99,10 +100,7 @@ int main()
 	}
 	testzuoyi();
 	test111();
-	//printf("error%s", strerror(errno));
-	//void fun(int, int);
-	//void (*pf) (int d,int);
-	//pf = fun;
+
 	vector<struct lll> v;
 	const char* ssr = "12345";
 	cout << mystrlen(ssr);
