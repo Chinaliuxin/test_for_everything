@@ -56,6 +56,26 @@ void teststringAdd20()
 
 }
 
+class Solution {//给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标
+public:
+	vector<int> twoSum(vector<int>& nums, int target) {
+		unordered_map<int, int> m;
+		//vector<int> v={};
+		for (int i = 0; i < nums.size(); i++) {
+			m[nums[i]] = i;
+		}
+		for (int i = 0; i < nums.size(); i++) {
+			if (m.count(target - nums[i]) && i != m[target - nums[i]])
+			{
+				//auto it=m.find(target-nums[i]);
+				//v.push_back(i);
+				//v.push_back(m[target-nums[i]]);//或者直接push m[target-nums[i]]
+				return { i,m[target - nums[i]] };
+			}
+		}
+		return {};
+	}
+};
 char* myStrcoy(char* dest, const char*src)//src复制到dest
 {
 	if (dest == NULL || src == NULL)

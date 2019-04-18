@@ -299,3 +299,20 @@ public:
 		}
 	}
 };
+int countBitDiff(int m, int n) {
+	int count = 0;
+	int i = 32;
+	while (i != 0)
+	{
+
+
+		if ((m & 1) != (n & 1))
+		{
+			count++;
+		}
+		i--;
+		m=m>>1;
+		n=n>>1;
+	}
+	return count;
+}

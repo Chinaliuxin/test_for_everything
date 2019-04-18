@@ -85,6 +85,7 @@ class __declspec(novtable) c
 };
 int main()
 {
+	cout << countBitDiff(1999, 2299) << endl;;
 	const char * ch1 = "1234";
 	const char * ch2 = "1234";
 	printf("%p,%p", ch1, ch2);
