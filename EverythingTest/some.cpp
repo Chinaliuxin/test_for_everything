@@ -110,7 +110,7 @@ int main()
 	v[0].b = 2;
 	string s ="123";
 	//findOnlyOne();
-	teststringAdd20();
+	//teststringAdd20();
 	//test_list1();
 	//main1();
 	//D::test();
