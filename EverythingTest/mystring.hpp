@@ -7,7 +7,7 @@ class String
 {
 public:
 	//¹¹Ôìº¯Êý
-	String(char *pstr = "")
+	String(const char *pstr = " ")
 		:_str(new char[strlen(pstr) + 1])
 		, _size(strlen(pstr))
 		, _capacity(_size)
