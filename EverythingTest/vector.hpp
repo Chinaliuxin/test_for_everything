@@ -179,6 +179,28 @@ void getvector132(vector<int>& v)
 	}
 }
 
+
+int binFind(vector<int> a, int key)
+{
+	int left = 0;
+	int right = a.size() - 1;
+	while (left <= right)
+	{
+		int mid = (left + right) >> 1;
+		if (left <= right && key > a[mid])
+		{
+			left= mid+1;
+		}
+		if (left <= right && key < a[mid])
+		{
+			right=mid-1;
+		}
+		else
+			return mid;
+	}
+	return -1;
+
+}
 void testgetvector132()
 {
 	int a[] = { 1,2,4,34,4 };

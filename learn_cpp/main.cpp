@@ -28,6 +28,7 @@
 //}
 #include <iostream>
 #include <string>
+#include<vector>
 using namespace std;
 
 /*
@@ -78,7 +79,68 @@ int rev(int n) {//反转整数
 	return new_n;
 }
 
+#include<iostream>
+#include<algorithm>
+using namespace std;
+struct player {
+	int w;
+	int h;
+};
 
+
+/*搜狐员工小王最近利用假期在外地旅游，在某个小镇碰到一个马戏团表演，精彩的表演结束后发现团长正和大伙在帐篷前激烈讨论，
+小王打听了下了解到， 马戏团正打算出一个新节目“最高罗汉塔”，即马戏团员叠罗汉表演。考虑到安全因素，要求叠罗汉过程中，站在某
+个人肩上的人应该既比自己矮又比自己瘦，或相等。 团长想要本次节目中的罗汉塔叠的最高，由于人数众多，正在头疼如何安排人员的问题。小
+王觉得这个问题很简单，于是统计了参与最高罗汉塔表演的所有团员的身高体重，并且很快找到叠最高罗汉塔的人员序列。 现在你手上也拿到了这样一
+份身高体重表，请找出可以叠出的最高罗汉塔的高度，这份表中马戏团员依次编号为1到N。
+*/
+//bool com_w(player p1, player p2)
+//{
+//	//按照体重从小到大排序
+//	if (p1.w != p2.w)
+//		return p1.w <= p2.w;
+//	//在体重相等的条件下，身高高的在前（在上）
+//	else
+//		return p1.h > p2.h;
+//}
+//int main()
+//{
+//	int N;
+//	int h;
+//	int w;
+//	int index;
+//	vector<player> p;
+//	while (cin >> N)
+//	{
+//		p.clear();
+//		for (int i = 0; i < N; i++)
+//		{
+//			player pt;
+//			cin >> index >> w >> h;
+//			pt.w = w;
+//			pt.h = h;
+//			p.push_back(pt);
+//		}
+//		sort(p.begin(), p.end(), com_w);
+//		//按身高求最大上升子序列
+//		int dp2[N + 1];
+//		int max = 0;
+//		dp2[0] = 1;
+//		for (int i = 1; i < N; i++)
+//		{
+//			dp2[i] = 1;
+//			for (int j = 0; j < i; j++)
+//			{
+//				if (p[j].h <= p[i].h && dp2[j] + 1 > dp2[i])
+//					dp2[i] = dp2[j] + 1;
+//			}
+//		}
+//		for (int i = 0; i < N; i++)
+//			if (max < dp2[i]) max = dp2[i];
+//		cout << max << endl;
+//	}
+//	return 0;
+//}
 
 class Solutivon {//替换空格为%20
 public:
@@ -123,7 +185,142 @@ int  main_of_str()
 	return 0;
 }
 
+int binFind(vector<int> &a, int key)
+{
+	int left = 0;
+	int right = a.size() - 1;
+	while (left <= right)
+	{
+		int mid = (left + right) >> 1;
+		if (left <= right && key > a[mid])
+		{
+			left = mid + 1;
+		}
+		if (left <= right && key < a[mid])
+		{
+			right = mid - 1;
+		}
+		else
+			return mid;
+	}
+	return -1;
+
+}
+int partSort(int *a, int left, int right)
+{
+	int temp = a[right];
+	while (left<right)
+	{
+		while (left<right && temp<=a[left])
+			left++;
+		a[right] = a[left];
+		while (left < right && temp > a[left])
+			right--;
+		a[left] = a[right];
+	}
+	a[right] = temp;
+	return left;
+}
+void quickSort(int *a, int left, int right)
+{
+	if(left < right)
+	{
+		int mid = partSort(a,  left,  right);
+		quickSort(a, left, mid - 1);
+		quickSort(a, mid + 1, right);
+	}
+}
+int quickSortPart(int a[], int left, int right)
+{
+	int temp = a[right];
+	while (left < right)
+	{
+		while (left < right&&a[left] < temp)
+		{
+			left++;
+		}
+		a[right] = a[left];
+		while (left < right&&a[right] >= temp)
+		{
+			right--;
+		}
+		a[left] = a[right];
+	}
+	a[right] = temp;
+	return right;
+}
+void quickSort_(int a[], int left, int right)
+{
+	if (left < right)
+	{
+		int mid = quickSortPart(a, left, right);
+		quickSort(a, left, mid - 1);
+		quickSort(a, mid + 1, right);
+	}
+}
+
+//#include <algorithm>
+//#include<iostream>
+//#include<string>
+//using namespace std;
+//int main()
+//{
+//	string str;
+//	while (cin >> str)
+//	{
+//		int temp = -1;
+//		while ((temp = str.find('_')) != -1)
+//		{
+//			str.erase(temp, 1);
+//			str[temp] = str[temp] + ('A' - 'a');
+//			cout << str << endl;
+//		}
+//	}
+//	return 0;
+//}
+//#include<string>
+//#include<iostream>
+//#include<algorithm>
+//using namespace std;
+//int main()
+//{
+//	string str;
+//	getline(cin, str);
+//	str = str + ' ';
+//	reverse(str.begin(), str.end());
+//	int flag = 0;
+//	for (int i = 0; i < str.size(); i++)
+//	{
+//		if (str[i] == ' ')
+//		{
+//			reverse(str.begin() + flag, str.begin() + i);
+//			flag = i;
+//		}
+//
+//	}
+//	reverse(str.begin() + flag, str.end());
+//	auto fun = [](char &a,  char  &b)->bool {if (a == b && a == ' ')return true; else return false; };
+//	auto it = unique(str.begin(), str.end(), fun);
+//	str.erase(it, str.end());
+//	cout << str;
+//}
+
+
 
 int main()
 {
+	string str;
+	str.reserve(2);
+	str[0]='1';
+	vector<int> aa = { 1,2,3,4,5,6 };
+	//cout << binFind(aa, 3);
+	int a []= {1,5,8,7,4,9,6,3,2,0};
+	int size = (sizeof(a) / sizeof(a[0])) ;
+	quickSort_(a, 0, size-1);
+	for (int i = 0; i <size; i++)
+	{
+		cout << a[i] << '\n';
+	}
+
+
 }

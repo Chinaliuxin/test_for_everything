@@ -45,7 +45,6 @@ namespace mysort {
 			quickSort(a, left, mid - 1);
 			quickSort(a, mid + 1, right);
 		}
-
 	}
 	void adjustHeap(int a[], int i, int size)
 	{
