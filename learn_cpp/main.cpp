@@ -214,7 +214,7 @@ int partSort(int *a, int left, int right)
 		while (left<right && temp<=a[left])
 			left++;
 		a[right] = a[left];
-		while (left < right && temp > a[left])
+		while (left < right && temp > a[right])
 			right--;
 		a[left] = a[right];
 	}
@@ -254,8 +254,8 @@ void quickSort_(int a[], int left, int right)
 	if (left < right)
 	{
 		int mid = quickSortPart(a, left, right);
-		quickSort(a, left, mid - 1);
-		quickSort(a, mid + 1, right);
+		quickSort_(a, left, mid - 1);
+		quickSort_(a, mid + 1, right);
 	}
 }
 
@@ -309,18 +309,19 @@ void quickSort_(int a[], int left, int right)
 
 int main()
 {
-	string str;
-	str.reserve(2);
-	str[0]='1';
-	vector<int> aa = { 1,2,3,4,5,6 };
+	//string str;
+	//str.reserve(2);
+	//str[0]='1';
+	//vector<int> aa = { 1,2,3,4,5,6 };
 	//cout << binFind(aa, 3);
-	int a []= {1,5,8,7,4,9,6,3,2,0};
+	/*int a []= {1,5,8,7,4,9,3,3,4,32,54,4,3,5,452,6,3,2,0};
 	int size = (sizeof(a) / sizeof(a[0])) ;
-	quickSort_(a, 0, size-1);
+	int right = size - 1;
+	quickSort(a, 0, right);
 	for (int i = 0; i <size; i++)
 	{
 		cout << a[i] << '\n';
 	}
-
+*/
 
 }
