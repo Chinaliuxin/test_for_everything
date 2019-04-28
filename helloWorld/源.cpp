@@ -63,16 +63,44 @@ public:
 		return returnIt;
 	}
 	};
+
+const char* myStrStr( const char * str,const char* des)
+{
+	for (int i = 0; str[i] != '\0'; i++)
+	{
+		int j = 0;
+		int temp = i;
+		if (str[i] == des[j])
+		{
+			while (str[i] == des[j])
+			{
+				i++;
+				j++;
+				if (des[j] == '\0')
+					return &str[i - j];
+			}
+		}
+		i = temp;
+	}
+	return nullptr;
+}
 int main()
 {
 	MaxGap s;
 	vector<int > a = { 2,7,3,1,1 };
-	cout<<s.findMaxGap(a, a.size());
+	//cout<<s.findMaxGap(a, a.size());
 	int cc = INT_MIN;
+	char str[]="fff12312361234512345612343";
+	char des[]= "123456";
+	const char * hh = myStrStr(str, des);
+	printf("%p\n", myStrStr(str, des));
+	printf("%p\n", strstr(str, des));
+
+	printf("%s", hh);
+	printf("%s\n", strstr(str, des));
 
 	int b = 0x80000000;
 	printf("%d", b);
-
 
 
 	return 0;
