@@ -89,7 +89,7 @@ int main()
 	MaxGap s;
 	vector<int > a = { 2,7,3,1,1 };
 	//cout<<s.findMaxGap(a, a.size());
-	int cc = INT_MIN;
+	int cc = INT_MIN;//0x80000000
 	char str[]="fff12312361234512345612343";
 	char des[]= "123456";
 	const char * hh = myStrStr(str, des);
