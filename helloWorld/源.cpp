@@ -1,5 +1,6 @@
 #include <iostream>
 #include<cstdio>
+#include<stack>
 using namespace std;
 int quickSortPart(int a[], int left, int right)
 {
@@ -143,6 +144,34 @@ bool fun(int n)
 		}
 	}
 	return true;
+}
+namespace minStack {
+	class Solution {
+	private:
+		stack<int> s1;
+		stack<int> s2;
+	public:
+		void push(int value) {
+			s1.push(value);
+			if (s2.empty() == 1 || value <= s2.top())
+			{
+				s2.push(value);
+			}
+		}
+		void pop() {
+			if (s1.empty() == 1)
+				return;
+			if (s1.top() == s2.top())
+				s2.pop();
+			s1.pop();
+		}
+		int top() {
+			return s1.top();
+		}
+		int min() {
+			return s2.top();
+		}
+	};
 }
 int  main()
 {
