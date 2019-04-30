@@ -84,24 +84,72 @@ const char* myStrStr( const char * str,const char* des)
 	}
 	return nullptr;
 }
-int main()
+//int main()
+//{
+//	MaxGap s;
+//	vector<int > a = { 2,7,3,1,1 };
+//	//cout<<s.findMaxGap(a, a.size());
+//	int cc = INT_MIN;//0x80000000
+//	char str[]="fff12312361234512345612343";
+//	char des[]= "123456";
+//	const char * hh = myStrStr(str, des);
+//	printf("%p\n", myStrStr(str, des));
+//	printf("%p\n", strstr(str, des));
+//
+//	printf("%s", hh);
+//	printf("%s\n", strstr(str, des));
+//
+//	int b = 0x80000000;
+//	printf("%d", b);
+//
+//
+//	return 0;
+//}
+//int main()
+//{
+//	MaxGap s;
+//	vector<int > a = { 2,7,3,1,1 };
+//	//cout<<s.findMaxGap(a, a.size());
+//	int cc = INT_MIN;//0x80000000
+//	char str[]="fff12312361234512345612343";
+//	char des[]= "123456";
+//	const char * hh = myStrStr(str, des);
+//	printf("%p\n", myStrStr(str, des));
+//	printf("%p\n", strstr(str, des));
+//
+//	printf("%s", hh);
+//	printf("%s\n", strstr(str, des));
+//
+//	int b = 0x80000000;
+//	printf("%d", b);
+//
+//
+//	return 0;
+//}
+#include<iostream>
+#include <string>
+using namespace std;
+bool fun(int n)
 {
-	MaxGap s;
-	vector<int > a = { 2,7,3,1,1 };
-	//cout<<s.findMaxGap(a, a.size());
-	int cc = INT_MIN;//0x80000000
-	char str[]="fff12312361234512345612343";
-	char des[]= "123456";
-	const char * hh = myStrStr(str, des);
-	printf("%p\n", myStrStr(str, des));
-	printf("%p\n", strstr(str, des));
+	long ret = n * n;
+	string str = to_string(ret);
+	int i = 0;
+	int j = str.size() - 1;
+	for (; i < j; i++, j--)
+	{
+		if (str[i] != str[j])
+		{
+			return false;
+		}
+	}
+	return true;
+}
+int  main()
+{
+	for (int i = 1; i < 256; i++)
+	{
+		if (fun(i) == true)
+			cout << i<<endl;
+	}
 
-	printf("%s", hh);
-	printf("%s\n", strstr(str, des));
-
-	int b = 0x80000000;
-	printf("%d", b);
-
-
-	return 0;
 }
