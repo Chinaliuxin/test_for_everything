@@ -1,6 +1,7 @@
 #include <iostream>
 #include<cstdio>
 #include<stack>
+#include<map>
 using namespace std;
 int quickSortPart(int a[], int left, int right)
 {
@@ -173,12 +174,103 @@ namespace minStack {
 		}
 	};
 }
+void adjustHeap(int a[], int i, int size)
+{
+	//int max;
+	int l = 2 * i + 1;
+	int r = 2 * i + 2;
+	int max = i;
+	//vs 2017 会检测&&右边的，故不能将l < size&& a[l] > a[max]书写
+	if (l < size) {
+		if (a[l] > a[max])
+			max = l;
+	}
+	if (r < size) {
+		if (a[r] > a[max])
+			max = r;
+	}
+	if (max != i)
+	{
+		::std::swap(a[i], a[max]);
+		adjustHeap(a, max, size);
+	}
+}
+
+void heapSort(int a[], int size)
+{
+	for (int i = size / 2 - 1; i >= 0; i--)
+	{
+		adjustHeap(a, i, size);
+	}
+	for (int i = size - 1; i >= 0; i--)
+	{
+		swap(a[0], a[i]);
+		adjustHeap(a, 0, i);
+	}
+}
+
+void fun(string & str)//时钟
+{
+	//12:12:12
+	int h = atoi(str.substr(0, 2).c_str());
+	int m = atoi(str.substr(3, 2).c_str());
+	int s = atoi(str.substr(6, 2).c_str());
+	if (h > 23)
+	{
+		h = h % 10;//30-00
+	}
+	if (m > 59)
+	{
+		m = m % 10;
+	}
+	if (s > 59)
+	{
+		s = s % 10;
+	}
+	if (h < 10)
+		cout << 0;
+	cout << h << ":";
+	if (m < 10)
+		cout << 0;
+	cout << m << ":";
+	if (s < 10)
+		cout << 0;
+	cout << s << endl;
+}
+
 int  main()
 {
-	for (int i = 1; i < 256; i++)
+	int num;
+	cin >> num;
+	while (num--)
 	{
-		if (fun(i) == true)
-			cout << i<<endl;
+		string str;
+		cin >> str;
+		fun(str);
+	}
+
+	string ssss="12:34:56";
+	int h=atoi(ssss.substr(0, 2).c_str());
+	int m = atoi(ssss.substr(3, 2).c_str());
+	int s = atoi(ssss.substr(6, 2).c_str());
+	cout << h << m << s;
+	int a[] = { 5,11,7,2,3,17 };
+	int size = 6;
+	for (int i = size / 2 - 1; i >= 0; i--)
+	{
+		adjustHeap(a, i, size);
+	}
+	for (int  e : a)
+	{
+		cout << e;
+	}
+	map<int,int> hash;
+	map<int, int>::iterator it = hash.begin();
+	pair<int, int> d(1, 2);
+	hash.insert(d);
+	for (auto e : hash)
+	{
+		cout << e.first;
 	}
 
 }
