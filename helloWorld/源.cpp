@@ -237,9 +237,10 @@ void fun(string & str)// ±÷”
 		cout << 0;
 	cout << s << endl;
 }
-
+int a[0x7ffffff];
 int  main()
 {
+	static int adsfsd[100000000];
 	int num;
 	cin >> num;
 	while (num--)
