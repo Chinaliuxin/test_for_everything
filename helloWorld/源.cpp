@@ -238,40 +238,82 @@ void fun(string & str)//Ê±ÖÓ
 	cout << s << endl;
 }
 int a[0x7ffffff];
-int  main()
+
+
+//int  main()
+//{
+//	static int adsfsd[100000000];
+//	int num;
+//	cin >> num;
+//	while (num--)
+//	{
+//		string str;
+//		cin >> str;
+//		fun(str);
+//	}
+//
+//	string ssss="12:34:56";
+//	int h=atoi(ssss.substr(0, 2).c_str());
+//	int m = atoi(ssss.substr(3, 2).c_str());
+//	int s = atoi(ssss.substr(6, 2).c_str());
+//	cout << h << m << s;
+//	int a[] = { 5,11,7,2,3,17 };
+//	int size = 6;
+//	for (int i = size / 2 - 1; i >= 0; i--)
+//	{
+//		adjustHeap(a, i, size);
+//	}
+//	for (int  e : a)
+//	{
+//		cout << e;
+//	}
+//	map<int,int> hash;
+//	map<int, int>::iterator it = hash.begin();
+//	pair<int, int> d(1, 2);
+//	hash.insert(d);
+//	for (auto e : hash)
+//	{
+//		cout << e.first;
+//	}
+//
+//}
+template<class T>
+struct fun_cmp {
+	bool operator()(T a, T b)
+	{
+		return a > b;
+	}
+};
+void mysort(string & num,struct)
 {
-	static int adsfsd[100000000];
-	int num;
-	cin >> num;
-	while (num--)
+	int size = num.size();
+	for (int i = 0; i <= size-2; i++)
 	{
-		string str;
-		cin >> str;
-		fun(str);
+		for (int j = 0; j < size - i - 1; j++)
+		{
+			if (fun_cmp(num[j],num[j+1])
+				swap(num[j], num[j + 1]);
+		}
 	}
-
-	string ssss="12:34:56";
-	int h=atoi(ssss.substr(0, 2).c_str());
-	int m = atoi(ssss.substr(3, 2).c_str());
-	int s = atoi(ssss.substr(6, 2).c_str());
-	cout << h << m << s;
-	int a[] = { 5,11,7,2,3,17 };
-	int size = 6;
-	for (int i = size / 2 - 1; i >= 0; i--)
+}
+#include <iostream>
+#include <string>
+#include <algorithm>
+using namespace std;
+int main()
+{
+	string str;
+	cin >> str;
+	string ss, num;
+	for (int i = 0; i < str.size(); i++)
 	{
-		adjustHeap(a, i, size);
+		if (str[i] >= '0' && str[i] <= '9')
+			num.push_back(str[i]);
+		if (str[i] >= 'a' && str[i] <= 'z')
+			ss.push_back(str[i]);
 	}
-	for (int  e : a)
-	{
-		cout << e;
-	}
-	map<int,int> hash;
-	map<int, int>::iterator it = hash.begin();
-	pair<int, int> d(1, 2);
-	hash.insert(d);
-	for (auto e : hash)
-	{
-		cout << e.first;
-	}
-
+	mysort(num);
+	mysort(ss);
+	cout <<ss<<num << endl;
+	return 0;
 }
