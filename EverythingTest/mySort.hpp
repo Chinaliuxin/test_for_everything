@@ -8,7 +8,75 @@ using namespace std;
 
 namespace mysort {
 
+	void MergeData(int* arr, int left, int mid, int right, int* tmp) {
+		int index = left;
+		int p = left, q = mid;	 // 双指针遍历
+		// 待排区间===[left , right)
+		// 左有序区间[left, mid)         右有序区间[mid, right) 
+		while (p < mid && q < right) {
+			if (arr[p] <= arr[q]) {
+				tmp[index++] = arr[p++];
+			}
+			else {
+				tmp[index++] = arr[q++];
+			}
+		}
+		while (p < mid) {
+			tmp[index++] = arr[p++];
+		}
+		while (q < right) {
+			tmp[index++] = arr[q++];
+		}
+		for (int i = left; i < right; i++) {
+			// [left, right)内的数列已全部有序
+			arr[i] = tmp[i];
+		}
+	}
+	void _MergeSort(int* arr, int left, int right, int* tmp) {
+		if (right - left > 1) {
+			int mid = left + ((right - left) >> 1);
+			// 1.排左区间
+			_MergeSort(arr, left, mid, tmp);
+			// 2.排右区间
+			_MergeSort(arr, mid, right, tmp);
+			// 3.归并
+			MergeData(arr, left, mid, right, tmp);
+		}
+	}
+	void MergeSort(int* arr, int size) {
+		int* tmp = (int*)malloc(sizeof(int) * size);
+		if (tmp == NULL) {
+			printf("内存分配失败");
+			return;
+		}
+		_MergeSort(arr, 0, size, tmp);
+		free(tmp);
+	}
 
+
+
+
+	// 非递归实现
+	void MergeSortNor(int* arr, int size) {
+		int* tmp = (int*)malloc(sizeof(int) * size);
+		if (tmp == NULL) {
+			printf("内存分配失败");
+			return;
+		}
+		int gap = 1;
+		while (gap < size) {
+			for (int i = 0; i < size; i += 2 * gap) {
+				int left = i;
+				int mid = left + gap;
+				int right = mid + gap;
+				if (mid >= size) { mid = size; }
+				if (right >= size) { right = size; }
+				MergeData(arr, left, mid, right, tmp);
+			}
+			gap *= 2;
+		}
+		free(tmp);
+	}
 
 	template <class T>
 	struct mygreater

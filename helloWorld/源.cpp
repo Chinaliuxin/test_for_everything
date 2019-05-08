@@ -1,5 +1,8 @@
 #include <iostream>
 #include<cstdio>
+#include <iostream>
+#include <string>
+#include <algorithm>
 #include<stack>
 #include<map>
 using namespace std;
@@ -277,43 +280,55 @@ int a[0x7ffffff];
 //	}
 //
 //}
-template<class T>
+int flag=0;
+#define   PAIR  pair<int,int>
+template<class T=PAIR>
 struct fun_cmp {
-	bool operator()(T a, T b)
+	bool operator()(const T a, const T b)const 
 	{
-		return a > b;
+		bool ret = a.first > b.first || (a.first == b.first && a.second > b.second);
+		if (ret == true)
+			flag ++;
+		return ret;
 	}
 };
-void mysort(string & num,struct)
+template<class T>
+struct Big {
+	bool operator()(const T a, const T b)const
+	{
+		return a>b;
+	}
+};
+template<class K>
+void mysort(vector<PAIR> & num,const K &cmp)
 {
 	int size = num.size();
 	for (int i = 0; i <= size-2; i++)
 	{
 		for (int j = 0; j < size - i - 1; j++)
 		{
-			if (fun_cmp(num[j],num[j+1])
+			if (cmp(num[j],num[j+1]))
 				swap(num[j], num[j + 1]);
 		}
 	}
 }
-#include <iostream>
-#include <string>
-#include <algorithm>
+
 using namespace std;
 int main()
 {
-	string str;
-	cin >> str;
-	string ss, num;
-	for (int i = 0; i < str.size(); i++)
+	vector<PAIR> v;
+	PAIR p[] = { {2,4},{1,7}, {1, 2},{1,3},{1,-4},{2,7},{2,9} };
+	for (int i = 0; i < sizeof(p) / sizeof(p[0]); i++)
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			num.push_back(str[i]);
-		if (str[i] >= 'a' && str[i] <= 'z')
-			ss.push_back(str[i]);
+		v.push_back(p[i]);
 	}
-	mysort(num);
-	mysort(ss);
-	cout <<ss<<num << endl;
-	return 0;
+	p[0].first;
+	mysort(v, fun_cmp<PAIR>());
+	for (auto e : v)
+	{
+		printf("{%d,%d}  ", e.first, e.second);
+	}
+	cout << flag;
+
 }
+
