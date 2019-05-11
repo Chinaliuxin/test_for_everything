@@ -67,9 +67,9 @@ public:
 		}
 		return returnIt;
 	}
-	};
+};
 
-const char* myStrStr( const char * str,const char* des)
+const char* myStrStr(const char * str, const char* des)
 {
 	for (int i = 0; str[i] != '\0'; i++)
 	{
@@ -280,15 +280,15 @@ int a[0x7ffffff];
 //	}
 //
 //}
-int flag=0;
+int flag = 0;
 #define   PAIR  pair<int,int>
-template<class T=PAIR>
+template<class T = PAIR>
 struct fun_cmp {
-	bool operator()(const T a, const T b)const 
+	bool operator()(const T a, const T b)const
 	{
 		bool ret = a.first > b.first || (a.first == b.first && a.second > b.second);
 		if (ret == true)
-			flag ++;
+			flag++;
 		return ret;
 	}
 };
@@ -296,26 +296,111 @@ template<class T>
 struct Big {
 	bool operator()(const T a, const T b)const
 	{
-		return a>b;
+		return a > b;
 	}
 };
-template<class K>
-void mysort(vector<PAIR> & num,const K &cmp)
+
+template<class T = vector<PAIR>, class K>
+void mysort(T & num, const K &cmp)
 {
 	int size = num.size();
-	for (int i = 0; i <= size-2; i++)
+	for (int i = 0; i <= size - 2; i++)
 	{
 		for (int j = 0; j < size - i - 1; j++)
 		{
-			if (cmp(num[j],num[j+1]))
+			if (cmp(num[j], num[j + 1]))
 				swap(num[j], num[j + 1]);
 		}
 	}
 }
+struct myvalue
+{
+	int a;
+	int b;
+	int c;
+	int d;
+};
+void testMyvalue()
+{
+	class fun_value {
+	public:
+		bool operator()(myvalue first, myvalue second)const
+		{
+			bool ret = false;
+			if (first.a == second.a)
+			{
+				if (first.b == second.b)
+				{
+					if (first.c == second.c)
+					{
+						if (first.d == second.d)
+						{
+							return first.d > second.d;
+						}
+					}
+					else
+					{
+						return first.c > second.c;
+					}
+				}
+				else
+				{
+					return first.b > second.b;
+				}
+			}
+			else
+			{
+				return first.a > second.a;
+			}
+			return ret;
+		}
 
-using namespace std;
+	};
+	//自定义排序
+	vector<myvalue> test;
+	myvalue val[] = { {12,344,-6,-1}, {12,344,3,4},{12,344,2,6},{-22,2,-1,4},{24,243,43,4},{34,24,4,24},{12,344,3,4} };
+	for (int i = 0; i < sizeof(val) / sizeof(val[0]); i++)
+	{
+		test.push_back(val[i]);
+	}
+	//mysort/*<vector<myvalue>>*/(test, fun_value());//自动推导类型
+	mysort(test, [](const myvalue first, const myvalue second)->bool
+	{
+		if (first.a == second.a)
+		{
+			if (first.b == second.b)
+			{
+				if (first.c == second.c)
+				{
+					if (first.d == second.d)
+					{
+						return first.d > second.d;
+					}
+				}
+				else
+				{
+					return first.c > second.c;
+				}
+			}
+			else
+			{
+				return first.b > second.b;
+			}
+		}
+		else
+		{
+			return first.a > second.a;
+		}
+	}
+	);
+	for (auto e : test)
+	{
+		printf("{%d,%d,%d,%d}  ", e.a, e.b, e.c, e.d);
+	}
+}
 int main()
 {
+	testMyvalue();
 	vector<PAIR> v;
 	PAIR p[] = { {2,4},{1,7}, {1, 2},{1,3},{1,-4},{2,7},{2,9} };
 	for (int i = 0; i < sizeof(p) / sizeof(p[0]); i++)
