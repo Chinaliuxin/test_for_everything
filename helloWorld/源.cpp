@@ -354,7 +354,7 @@ void testMyvalue()
 			}
 			return ret;
 		}
-
+		
 	};
 	//自定义排序
 	vector<myvalue> test;
@@ -414,6 +414,32 @@ int main()
 		printf("{%d,%d}  ", e.first, e.second);
 	}
 	cout << flag;
-
+	string str;
 }
 
+
+//B站实现一个HTML语法检查器
+
+//迅雷输入一个有符号整数，输出该整数的反转值。
+//#include <iostream>
+//#include <string>
+//#include <algorithm>
+//using namespace std;
+//int main()
+//{
+//	string str;
+//	int num;
+//	int flag = 0;
+//	cin >> num;
+//	if (num < 0)
+//	{
+//		flag = 1;
+//		num = -num;
+//	}
+//	string temp = to_string(num);
+//	reverse(temp.begin(), temp.end());
+//	int ret = atoi(temp.c_str());
+//	if (flag == 1)
+//		ret = -ret;
+//	cout << ret;
+//}
