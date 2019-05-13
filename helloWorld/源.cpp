@@ -416,7 +416,32 @@ int main()
 	cout << flag;
 	string str;
 }
-
+void FindMax()//动态规划
+{
+	int i, j;
+	//填表
+	for (i = 1; i <= number; i++)
+	{
+		for (j = 1; j <= capacity; j++)
+		{
+			if (j < w[i])//包装不进
+			{
+				V[i][j] = V[i - 1][j];
+			}
+			else//能装
+			{
+				if (V[i - 1][j] > V[i - 1][j - w[i]] + v[i])//不装价值大
+				{
+					V[i][j] = V[i - 1][j];
+				}
+				else//前i-1个物品的最优解与第i个物品的价值之和更大
+				{
+					V[i][j] = V[i - 1][j - w[i]] + v[i];
+				}
+			}
+		}
+	}
+}
 
 //B站实现一个HTML语法检查器
 
