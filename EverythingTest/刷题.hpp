@@ -208,7 +208,9 @@ int mafin()
 
 #include <iostream>
 
-using namespace std;
+using na
+
+space std;
 
 int main() {
 	int num;

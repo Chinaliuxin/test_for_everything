@@ -398,51 +398,77 @@ void testMyvalue()
 		printf("{%d,%d,%d,%d}  ", e.a, e.b, e.c, e.d);
 	}
 }
+//int main()
+//{
+//	testMyvalue();
+//	vector<PAIR> v;
+//	PAIR p[] = { {2,4},{1,7}, {1, 2},{1,3},{1,-4},{2,7},{2,9} };
+//	for (int i = 0; i < sizeof(p) / sizeof(p[0]); i++)
+//	{
+//		v.push_back(p[i]);
+//	}
+//	p[0].first;
+//	mysort(v, fun_cmp<PAIR>());
+//	for (auto e : v)
+//	{
+//		printf("{%d,%d}  ", e.first, e.second);
+//	}
+//	cout << flag;
+//	string str;
+//}
+//void FindMax()//动态规划
+//{
+//	int i, j;
+//	//填表
+//	for (i = 1; i <= number; i++)
+//	{
+//		for (j = 1; j <= capacity; j++)
+//		{
+//			if (j < w[i])//包装不进
+//			{
+//				V[i][j] = V[i - 1][j];
+//			}
+//			else//能装
+//			{
+//				if (V[i - 1][j] > V[i - 1][j - w[i]] + v[i])//不装价值大
+//				{
+//					V[i][j] = V[i - 1][j];
+//				}
+//				else//前i-1个物品的最优解与第i个物品的价值之和更大
+//				{
+//					V[i][j] = V[i - 1][j - w[i]] + v[i];
+//				}
+//			}
+//		}
+//	}
+//}
+
+#include <iostream>
+#include <string>
+#include <unordered_map>
+#include <set>
+using namespace std;
 int main()
 {
-	testMyvalue();
-	vector<PAIR> v;
-	PAIR p[] = { {2,4},{1,7}, {1, 2},{1,3},{1,-4},{2,7},{2,9} };
-	for (int i = 0; i < sizeof(p) / sizeof(p[0]); i++)
+	set<int> se;
+	se.insert(1);
+	if (se.end() == se.find(2))cout << "no find" << endl;
+	string str1, str2;
+	cin >> str1 >> str2;
+	unordered_map<char, int> hash;
+	int flag = 1;
+	for (int i = 0; i < str2.size(); i++)
 	{
-		v.push_back(p[i]);
+		hash[str2[i]]++;
 	}
-	p[0].first;
-	mysort(v, fun_cmp<PAIR>());
-	for (auto e : v)
+	for (int i = 0; i < str1.size(); i++)
 	{
-		printf("{%d,%d}  ", e.first, e.second);
+		if (hash.count(str1[i]) != 1)
+			flag = 0;
 	}
-	cout << flag;
-	string str;
+	flag == 1 ? cout << "true" : cout << "false";
+	
 }
-void FindMax()//动态规划
-{
-	int i, j;
-	//填表
-	for (i = 1; i <= number; i++)
-	{
-		for (j = 1; j <= capacity; j++)
-		{
-			if (j < w[i])//包装不进
-			{
-				V[i][j] = V[i - 1][j];
-			}
-			else//能装
-			{
-				if (V[i - 1][j] > V[i - 1][j - w[i]] + v[i])//不装价值大
-				{
-					V[i][j] = V[i - 1][j];
-				}
-				else//前i-1个物品的最优解与第i个物品的价值之和更大
-				{
-					V[i][j] = V[i - 1][j - w[i]] + v[i];
-				}
-			}
-		}
-	}
-}
-
 //B站实现一个HTML语法检查器
 
 //迅雷输入一个有符号整数，输出该整数的反转值。
