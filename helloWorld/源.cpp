@@ -442,7 +442,41 @@ void testMyvalue()
 //		}
 //	}
 //}
-
+#include <unordered_set>
+//例如:A = "00010001", B = "??"
+//字符串B可能的字符串是"00", "01", "10", "11", 只有"11"没有出现在字符串A中, 所以输出3
+int ma___in()
+{
+	string str1, str2;//str1 长字符串
+	while (cin >> str1 >> str2)
+	{
+		int ret = 0;
+		vector<int> arr;
+		for (int i = 0; i < str2.size(); i++)
+		{
+			if (str2[i] == '?')
+				arr.push_back(i);
+		}
+		unordered_set<string> set;
+		int len = str2.size();
+			for (int i = 0; i <= str1.size() - len; i++)
+			{
+				set.insert(str1.substr(i, len));
+			}
+		for (auto it = set.begin(); it != set.end(); it++)
+		{
+			string temp = *it;
+			for (auto e : arr)
+			{
+				temp[e] = '?';
+			}
+			if (temp == str2)
+				ret++;
+		}
+		cout << ret << endl;
+	}
+	return 0;
+}
 #include <iostream>
 #include <string>
 #include <unordered_map>
@@ -450,10 +484,19 @@ void testMyvalue()
 using namespace std;
 int main()
 {
+	ma___in();
 	set<int> se;
 	se.insert(1);
 	if (se.end() == se.find(2))cout << "no find" << endl;
-	string str1, str2;
+	auto it = se.begin();
+	map<int,string> sssss;
+	sssss.insert(pair<int, string>(1, "2"));
+	cout<<sssss.begin()->second;
+	string str1="122,", str2;
+	for (char  e : str1)
+	{
+		cout << e;
+	}
 	cin >> str1 >> str2;
 	unordered_map<char, int> hash;
 	int flag = 1;
