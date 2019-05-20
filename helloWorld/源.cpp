@@ -354,7 +354,7 @@ void testMyvalue()
 			}
 			return ret;
 		}
-		
+
 	};
 	//自定义排序
 	vector<myvalue> test;
@@ -459,10 +459,10 @@ int ma___in()
 		}
 		unordered_set<string> set;
 		int len = str2.size();
-			for (int i = 0; i <= str1.size() - len; i++)
-			{
-				set.insert(str1.substr(i, len));
-			}
+		for (int i = 0; i <= str1.size() - len; i++)
+		{
+			set.insert(str1.substr(i, len));
+		}
 		for (auto it = set.begin(); it != set.end(); it++)
 		{
 			string temp = *it;
@@ -477,40 +477,93 @@ int ma___in()
 	}
 	return 0;
 }
+
+
+void fun1()
+{
+	auto bianliang = 'A' + 1 + 3.3;
+	cout << typeid(bianliang).name() << endl;
+	auto a = 11 | 10;
+	cout <<a;
+	printf("%5.3s","computer");
+	int num;
+	while (cin >> num)
+	{
+		vector<int> queue;
+		queue.reserve(3 * num);
+		int size = 3 * num;
+		while (size--)
+		{
+			int nu; cin >> nu;
+			queue.push_back(nu);
+		}
+		sort(queue.begin(), queue.end());
+		int ret = 0;
+		for (int i = num; i < 2 * num; i++)
+		{
+			ret += queue[i];
+		}
+		cout << ret << endl;
+	}
+}
 #include <iostream>
 #include <string>
 #include <unordered_map>
 #include <set>
+#include<Windows.h>
 using namespace std;
 int main()
 {
-	ma___in();
-	set<int> se;
-	se.insert(1);
-	if (se.end() == se.find(2))cout << "no find" << endl;
-	auto it = se.begin();
-	map<int,string> sssss;
-	sssss.insert(pair<int, string>(1, "2"));
-	cout<<sssss.begin()->second;
-	string str1="122,", str2;
-	for (char  e : str1)
+	fun1();
+	int num;
+	while (cin >> num)
 	{
-		cout << e;
+		DWORD start_time = GetTickCount();
+		int ret = 0;
+		int fi = -1;
+		for (int i = 1; i <= num; i++)
+		{
+			string temp = to_string(i);
+
+			while ((fi = temp.find('1')) != -1)
+			{
+				ret++;
+				temp.erase(fi, 1);
+			}
+		}
+		cout << ret << endl;
+		DWORD end_time = GetTickCount();
+		cout << "The run time is:" << (end_time - start_time) << "ms!" << endl;
+
 	}
-	cin >> str1 >> str2;
-	unordered_map<char, int> hash;
-	int flag = 1;
-	for (int i = 0; i < str2.size(); i++)
-	{
-		hash[str2[i]]++;
-	}
-	for (int i = 0; i < str1.size(); i++)
-	{
-		if (hash.count(str1[i]) != 1)
-			flag = 0;
-	}
-	flag == 1 ? cout << "true" : cout << "false";
-	
+
+	//ma___in();
+	//set<int> se;
+	//se.insert(1);
+	//if (se.end() == se.find(2))cout << "no find" << endl;
+	//auto it = se.begin();
+	//map<int,string> sssss;
+	//sssss.insert(pair<int, string>(1, "2"));
+	//cout<<sssss.begin()->second;
+	//string str1="122,", str2;
+	//for (char  e : str1)
+	//{
+	//	cout << e;
+	//}
+	//cin >> str1 >> str2;
+	//unordered_map<char, int> hash;
+	//int flag = 1;
+	//for (int i = 0; i < str2.size(); i++)
+	//{
+	//	hash[str2[i]]++;
+	//}
+	//for (int i = 0; i < str1.size(); i++)
+	//{
+	//	if (hash.count(str1[i]) != 1)
+	//		flag = 0;
+	//}
+	//flag == 1 ? cout << "true" : cout << "false";
+
 }
 //B站实现一个HTML语法检查器
 

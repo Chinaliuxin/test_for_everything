@@ -34,7 +34,7 @@ namespace D {
 	};
 	template<class T>
 	T* single<T>::p = new T;
-
+	//µ¥Àý
 
 	//singleton* singleton::initance()
 	//{

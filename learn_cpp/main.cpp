@@ -305,7 +305,73 @@ void quickSort_(int a[], int left, int right)
 //	cout << str;
 //}
 
-
+/*牛牛定义排序子序列为一个数组中一段连续的子序列,并且这段子序列是非递增或者
+非递减排序的。
+牛牛有一个长度为n的整数数组A,他现在有一个任务是把数组A分为若干段排序子序列,
+牛牛想知道他最少可以把这个数组分为几段排序子序列. 
+如样例所示, 牛牛可以把数组A划分为[1, 2, 3]和[2, 2, 1]两个排序子序列
+, 至少需要划分为2个排序子序列, 所以输出2
+排序子序列
+*/
+int vector_zixulie(){
+	int n;
+	while (cin >> n)
+	{
+		vector<int> v;
+		v.reserve(n);
+		while (n--)
+		{
+			int num;
+			cin >> num;
+			v.push_back(num);
+		}
+		int flag = 0;//1=>递增   -1=>递减
+		int ret = 0;
+		for (int i = 0; i < v.size() - 1; i++)
+		{
+			if (flag == 0)
+			{
+				if (v[i] == v[i + 1])
+					continue;
+				if (v[i] < v[i + 1])
+				{
+					flag = 1;
+					ret++;
+				}
+				else {
+					flag = -1;
+					ret++;
+				}
+			}
+			if (flag == 1)
+			{
+				if (v[i] == v[i + 1])
+					continue;
+				if (v[i] < v[i + 1])
+					continue;
+				if (v[i] > v[i + 1])
+				{
+					flag = 0;
+				}
+			}
+			if (flag == -1)
+			{
+				if (v[i] = v[i + 1])
+					continue;
+				if (v[i] > v[i + 1])
+					continue;
+				if (v[i] < v[i + 1])
+				{
+					flag = 0;
+				}
+			}
+		}
+		if (flag == 0)
+			ret++;
+		cout << ret << endl;
+	}
+	return 0;
+}
 
 int main()
 {
