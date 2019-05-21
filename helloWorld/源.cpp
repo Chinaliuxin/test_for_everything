@@ -5,6 +5,7 @@
 #include <algorithm>
 #include<stack>
 #include<map>
+#include"fun.h"
 using namespace std;
 int quickSortPart(int a[], int left, int right)
 {
@@ -478,9 +479,18 @@ int ma___in()
 	return 0;
 }
 
-
+char* Mstrcpy(char * des, const char* str)
+{
+	char * ret = des;
+	while (*des++ = *str++)
+		;
+	return ret;
+}
 void fun1()
 {
+
+	const char* s_1 = "123";
+	const char* s_2 = "123";
 	auto bianliang = 'A' + 1 + 3.3;
 	cout << typeid(bianliang).name() << endl;
 	auto a = 11 | 10;
@@ -514,6 +524,7 @@ void fun1()
 using namespace std;
 int main()
 {
+	testA();
 	fun1();
 	int num;
 	while (cin >> num)
