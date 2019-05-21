@@ -516,6 +516,47 @@ void fun1()
 		cout << ret << endl;
 	}
 }
+unsigned int Continumax(char** pOutputstr, char* inputstr)
+{
+	int size = 0;//记录当前数字串的长度
+	int i = 0;//用来遍历inputstr
+	int maxsize = 0;//保存最长数字串的长度
+	int end = 0;//记录最大数字串的结束位置
+
+	while (inputstr[i] != '\0')
+	{
+		size = 0;//每一趟先把size置0
+
+		//若是数字，则累加size
+		while ('0' <= inputstr[i] && inputstr[i] <= '9')
+		{
+			size++;
+			i++;
+		}
+
+		//比较判断最大数字串的长度和结束位置
+		if (size >= maxsize)
+		{
+			maxsize = size;
+			end = i - 1;
+		}
+		i++;
+	}
+	if (0 == maxsize)//如果没有数字或者输入字符串为空
+	{
+		*pOutputstr = (char*)malloc(sizeof(char));
+		**pOutputstr = '\0';
+		return 0;
+	}
+
+	else
+	{
+		*pOutputstr = (char*)malloc(sizeof(char) * (maxsize));
+		*pOutputstr = inputstr + end - maxsize + 1;
+		return maxsize;
+	}
+}
+
 #include <iostream>
 #include <string>
 #include <unordered_map>
