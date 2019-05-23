@@ -1,2 +1,3 @@
 
 void testA();
+void testMerge();

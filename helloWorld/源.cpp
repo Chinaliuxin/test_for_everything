@@ -563,8 +563,36 @@ unsigned int Continumax(char** pOutputstr, char* inputstr)
 #include <set>
 #include<Windows.h>
 using namespace std;
+void test_register()
+{
+	int register num = 100;
+	cout << sizeof(num);
+	DWORD start_time1 = GetTickCount();
+	int a = 0;
+	for (int i = 0; i < 100000; i++)
+	{
+		for (int j = 0; j < 10000; j++)
+			 a += 1;
+	}
+	DWORD end_time1 = GetTickCount();
+
+	cout << "The run time is:" << (end_time1 - start_time1) << "ms!" << endl;
+
+	DWORD start_time2 = GetTickCount();
+	int register b = 0;
+	for (register int i = 0; i < 100000; i++)
+	{
+		for (register int j = 0; j < 10000; j++)
+			b += 1;
+	}
+	DWORD end_time2 = GetTickCount();
+	cout << end_time1;
+	cout << "The run time is:" << (end_time2 - start_time2) << "ms!" << endl;
+}
 int main()
 {
+	testMerge();
+	test_register();
 	testA();
 	fun1();
 	int num;

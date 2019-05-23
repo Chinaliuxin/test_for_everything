@@ -187,7 +187,7 @@ void print(PNode& phead)
 	}
 	cout << "nullptr";
 }
-
+//Á´±íÏà¼Ó
 class Solutionlist {
 public:
 	PNode listAdd(mylist& const list1, mylist& const list2)
