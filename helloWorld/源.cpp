@@ -588,6 +588,7 @@ void test_register()
 	DWORD end_time2 = GetTickCount();
 	cout << end_time1;
 	cout << "The run time is:" << (end_time2 - start_time2) << "ms!" << endl;
+	//运行时间
 }
 int main()
 {

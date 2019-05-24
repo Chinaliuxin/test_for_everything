@@ -29,6 +29,7 @@ void testA()
 	//classA.a = 1;
 	B b;
 	cout << b.fun() << endl << b.a;
+
 }
 
 class Solution {

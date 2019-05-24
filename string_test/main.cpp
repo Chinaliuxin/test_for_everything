@@ -35,19 +35,26 @@ public:
 		cout << "×ÓÀà" << endl;
 	}
 };
-static void change(A a)
+static void  change(A a)
 {
 	a.fun();
 }
-
-int main()
+void testduotai()
 {
 	//A *a=new A;
-	//B *b=new B;
+//B *b=new B;
 	A a;
 	B b;
 	change(a);
 	change(b);
+	A* ptr = nullptr;
+	ptr = &b;
+	ptr->fun();
+
+}
+int main()
+{
+	testduotai();
 	string str1, str2;
 
 	while (cin >> str1 >> str2)
