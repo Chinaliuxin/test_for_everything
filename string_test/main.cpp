@@ -50,7 +50,9 @@ void testduotai()
 	A* ptr = nullptr;
 	ptr = &b;
 	ptr->fun();
-
+	cout << "eeeeeeeeeeeeeee" << endl;
+	B* pB = &b;
+	pB->fun();
 }
 int main()
 {
