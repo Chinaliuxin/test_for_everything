@@ -1,4 +1,5 @@
 #include <iostream>
+#include"string_test.hpp"
 #include <string>
 #include <algorithm>
 using namespace std;
@@ -54,8 +55,39 @@ void testduotai()
 	B* pB = &b;
 	pB->fun();
 }
+int testADD()
+{
+	string num1, num2;
+	while (cin >> num1 >> num2)
+	{
+		my_main(num1, num2);
+	}
+	return  0;
+
+}
+void testShunxu()
+{
+	int a = 1, b = 0, c = 1, d = 0;
+	d =((++b&&++c)||++a) ;
+	int f = 11 && 11;
+	cout << "´ð°¸ÊÇ" << d<<'f'<<f;
+}
 int main()
 {
+	testShunxu();
+	//string s("224543");
+	//vector<int	>v;
+	//for (auto e : s)
+	//{
+	//	v.push_back(atoi(e));
+	//}
+	/*for(int i=0;i<v.size();i++)
+	cout << v[i];*/
+	testload test;
+	cout<<test.myoverload(1,2,3);
+	bool ch[] = { true,false };
+	cout << '\n'<<ch[0];
+	testADD();
 	testduotai();
 	string str1, str2;
 
