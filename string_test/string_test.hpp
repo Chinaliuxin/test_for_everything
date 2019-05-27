@@ -73,10 +73,12 @@ void  my_main(string &num1, string &num2)
 	}
 	cout << '\n';
 }
-
+template<class T>
 class testload {
 	int ret;
 public:
+	static int myoverload();
+	T fun();
 	static int myoverload(int a, int b, int c=10)
 	{
 		cout << "第一个函数";
@@ -94,7 +96,7 @@ public:
 	即不会修改任何的数据成员也就是不会改变该对象的状态。该类函数的声明和定义时都要加上
 	const 关键字。
 	*/
-	int  myoverload(int a = 1, int b = 1)
+	int  myoverload(int a , int b = 1)
 	{
 		cerr << "第三个";
 		this->ret = a;
@@ -114,7 +116,19 @@ public:
 
 	}
 };
+template <class T>
+int testload<T>::myoverload()
+{
+	cout << "第二个调用方法";
+	return 0;
+}
 
+template<class T>
+inline T testload<T>::fun()
+{
+	T a = a + a;
+	return T();
+}
 
 void dfs(string sofar, string rest, vector<string> &ret)
 {
@@ -136,7 +150,7 @@ void dfs(string sofar, string rest, vector<string> &ret)
 int testStringDfs()
 {
 	vector<string> ret;
-	string str("apple");
+	string str("1234");
 	//cin >> str;
 	dfs("", str, ret);
 	sort(ret.begin(), ret.end());

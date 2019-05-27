@@ -72,9 +72,25 @@ void testShunxu()
 	int f = 11 && 11;
 	cout << "答案是" << d<<'f'<<f;
 }
+void fun_kaoyan(int &time,int n)
+{
+	int x = 0;
+	while ((x+1)*(x+1)<n)
+	{
+		time++;
+		x += 1;
+	}
+}
 int main()
 {
-	
+	vector<int> sss(2,10);
+
+	int time = 0;
+	fun_kaoyan(time,1000000);
+	cout << time;
+	testload<int>::myoverload();
+	testload<int> * p;
+	p->myoverload();//static函数是所有对象共有的。
 	string s("123");
 	cout << s.substr(3);
 	testStringDfs();
@@ -87,7 +103,7 @@ int main()
 	//}
 	/*for(int i=0;i<v.size();i++)
 	cout << v[i];*/
-	testload test;
+	testload<int> test;
 	cout<<test.myoverload(1,2,3);
 	bool ch[] = { true,false };
 	cout << '\n'<<ch[0];
