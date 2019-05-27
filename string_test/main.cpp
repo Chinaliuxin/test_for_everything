@@ -74,6 +74,10 @@ void testShunxu()
 }
 int main()
 {
+	
+	string s("123");
+	cout << s.substr(3);
+	testStringDfs();
 	testShunxu();
 	//string s("224543");
 	//vector<int	>v;

@@ -114,3 +114,38 @@ public:
 
 	}
 };
+
+
+void dfs(string sofar, string rest, vector<string> &ret)
+{
+	if (rest.size() == 0)
+	{
+		ret.push_back(sofar);
+	}
+	else {
+		for (int i = 0; i < rest.size(); i++)
+		{
+			string next = sofar + rest[i];
+			string remianing = rest.substr(0, i) + rest.substr(i + 1);
+			dfs(next, remianing, ret);
+		}
+	}
+}
+#include<set>
+//全排列，求字符串的排列组合
+int testStringDfs()
+{
+	vector<string> ret;
+	string str("apple");
+	//cin >> str;
+	dfs("", str, ret);
+	sort(ret.begin(), ret.end());
+
+	set<string> set(ret.begin(), ret.end());
+	cout << "原大小："<<ret.size()<<"->"<<set.size();
+	for (auto e : set)
+	{
+		cout << e << endl;
+	}
+	return 0;
+}
