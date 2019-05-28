@@ -15,6 +15,9 @@ using namespace std;
 //public:
 //	auto v;
 //};
+
+
+
 template <class T = string>
 void reverse(T & s)
 {

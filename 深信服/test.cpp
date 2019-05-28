@@ -157,7 +157,7 @@ bool equal(vector<string>first, vector<string> second)
 	}
 	return true;
 }
-int main()
+int main_()
 {
 	int num;
 	cin >> num;
@@ -186,6 +186,11 @@ int main()
 			cout << "lengths" << endl;
 		if (flag == 0)
 			cout << "none" << endl;
+		return -1;
+}
+#include"father.hpp"	
+int main()
+{
+	testAandB();
 
-	
 }
