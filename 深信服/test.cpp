@@ -191,6 +191,7 @@ int main_()
 #include"father.hpp"	
 int main()
 {
+	机器人走路();
 	testAandB();
 
 }
