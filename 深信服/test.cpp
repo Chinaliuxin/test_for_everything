@@ -189,6 +189,7 @@ int main_()
 		return -1;
 }
 #include"father.hpp"	
+
 int main()
 {
 	机器人走路();
