@@ -191,8 +191,19 @@ int main_()
 #include"father.hpp"	
 #include<set>
 #include"幸运的袋子.h"
+union mytype{
+	int a;
+	long b;
+	double c;
+};
 int main()
 {
+	mytype A;
+	A.a = 11823745;
+	A.b = 2234;
+	A.c = 123.78;
+	cout << A.a <<"-"<< A.b << "-" << A.c << endl;;
+	cout << sizeof(A);
 	//set<int>ser;
 	//ser.insert(1);
 	//ser.insert(2);
@@ -200,9 +211,18 @@ int main()
 	//{
 	//	cout << e;
 	//}
+	int const a = 10;
+	int* p = (int *)&a;
+	*p = 20;
+	//cout << a<<*p;
+	printf("a的值:%d  *p的值%d", a, *p);
+	printf("\n a的地址：%p p指针存的地址：%p", &a, p);
 	testluck();
 
 	机器人走路();
 	testAandB();
 
 }
+class We {
+	We(int) {};
+};
