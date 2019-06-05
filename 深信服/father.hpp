@@ -33,6 +33,7 @@ void testAandB()
 	p->test();
 }
 #include <iostream>
+#include <Windows.h>
 #include <vector>
 using namespace std;
 int 机器人走路()

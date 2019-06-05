@@ -189,9 +189,19 @@ int main_()
 		return -1;
 }
 #include"father.hpp"	
-
+#include<set>
+#include"幸运的袋子.h"
 int main()
 {
+	//set<int>ser;
+	//ser.insert(1);
+	//ser.insert(2);
+	//for (auto e : ser)
+	//{
+	//	cout << e;
+	//}
+	testluck();
+
 	机器人走路();
 	testAandB();
 
