@@ -192,16 +192,16 @@ int main_()
 #include<set>
 #include"幸运的袋子.h"
 union mytype{
-	int a;
-	long b;
-	double c;
+	char a;
+	int b;
+	long double c;
 };
 int main()
 {
 	mytype A;
 	A.a = 11823745;
 	A.b = 2234;
-	A.c = 123.78;
+	A.c = 0.01;
 	cout << A.a <<"-"<< A.b << "-" << A.c << endl;;
 	cout << sizeof(A);
 	//set<int>ser;
@@ -217,6 +217,8 @@ int main()
 	//cout << a<<*p;
 	printf("a的值:%d  *p的值%d", a, *p);
 	printf("\n a的地址：%p p指针存的地址：%p", &a, p);
+	const int &b = a;
+	cout << "b的value:" << b<<"a的value"<<a;
 	testluck();
 
 	机器人走路();

@@ -81,8 +81,23 @@ void fun_kaoyan(int &time,int n)
 		x += 1;
 	}
 }
+
+int testStatic(int n)
+{
+	static int i = 1;
+	if (n > 5)
+		return n;
+	n = n + i;
+	i = 1;
+	i++;
+	return testStatic(n);
+}
 int main()
 {
+	cout<<testStatic(1);
+
+	char ww[] = "12345654323456543";
+	cout << sizeof(ww);
 	vector<int> sss(2,10);
 
 	int time = 0;
