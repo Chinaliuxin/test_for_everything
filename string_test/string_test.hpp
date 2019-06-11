@@ -190,12 +190,12 @@ void findMaxCommonStr(string s1, string s2)
 		}
 	cout << s1.substr(start, maxLen) << endl;
 }
-int main()
-{
-	string s1, s2;
-	while (cin >> s1 >> s2)
-	{
-		findMaxCommonStr(s1, s2);
-	}
-	return 0;
-}
+//int main()
+//{
+//	string s1, s2;
+//	while (cin >> s1 >> s2)
+//	{
+//		findMaxCommonStr(s1, s2);
+//	}
+//	return 0;
+//}
