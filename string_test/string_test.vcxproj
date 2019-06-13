@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="leetcode.hpp" />
+    <ClInclude Include="MP3_test.hpp" />
     <ClInclude Include="string_test.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
