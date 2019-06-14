@@ -198,7 +198,7 @@ void adjustHeap(int a[], int i, int size)
 		::std::swap(a[i], a[max]);
 		adjustHeap(a, max, size);
 	}
-}
+}//logn
 
 void heapSort(int a[], int size)
 {

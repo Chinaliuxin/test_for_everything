@@ -29,5 +29,8 @@
     <ClInclude Include="MP3_test.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="year_money.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
