@@ -92,8 +92,41 @@ int testStatic(int n)
 	i++;
 	return testStatic(n);
 }
+#include "coin.hpp"
+class AA
+
+{
+
+public:
+
+	void test()
+
+	{
+
+		cout << "AA::test()" << endl;
+
+	}
+
+};
+
+//int main()
+//
+//{
+//	long w = 0;
+//	AA *p = (AA*)w;
+//
+//	p->test();
+//
+//	return 0;
+//
+//}
+
+
+
 int main()
 {
+	cointest co;
+	co.main();
 	cout<<testStatic(1);
 
 	char ww[] = "12345654323456543";

@@ -118,6 +118,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="coin.hpp" />
     <ClInclude Include="leetcode.hpp" />
     <ClInclude Include="MP3_test.hpp" />
     <ClInclude Include="string_test.hpp" />

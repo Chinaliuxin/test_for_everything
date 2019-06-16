@@ -54,7 +54,7 @@ public:
 //int main()
 //{
 //	// 客户端
-//	Factory::ProductCar("奥迪")->Run();
+//	FactorProductCar("奥迪")->Run();
 //	Factory::ProductCar("宝马")->Run();
 //	Factory::ProductCar("其他")->Run();
 //	// 释放(C++中没有JVM,堆上的内存需要程序员手动释放,否则会出现内存泄露)
