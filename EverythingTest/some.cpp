@@ -83,8 +83,10 @@ class __declspec(novtable) c
 	virtual ~c() {};
 	int x;
 };
+#include"mystring.hpp"
 int main()
 {
+	testmystring();
 	cout << countBitDiff(1999, 2299) << endl;;
 	const char * ch1 = "1234";
 	const char * ch2 = "1234";

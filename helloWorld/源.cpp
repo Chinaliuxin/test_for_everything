@@ -70,7 +70,7 @@ public:
 	}
 };
 
-const char* myStrStr(const char * str, const char* des)
+const char* mymy(const char * str, const char* des)
 {
 	for (int i = 0; str[i] != '\0'; i++)
 	{

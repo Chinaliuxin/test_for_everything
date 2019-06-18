@@ -5,9 +5,16 @@ using namespace std;
 
 class String
 {
+	char* strcpy(char * des, const char* str)
+	{
+		char * ret = des;
+		while (*des++ = *str++)
+			;
+		return ret;
+	}
 public:
 	//构造函数
-	String(const char *pstr = " ")
+	String(const char *pstr = "")
 		:_str(new char[strlen(pstr) + 1])
 		, _size(strlen(pstr))
 		, _capacity(_size)
@@ -46,7 +53,7 @@ public:
 	}
 	void Swap(String& s)
 	{
-		swap(_str, s._str);
+		swap(this->_str, s._str);
 		swap(_size, s._size);
 		swap(_capacity, s._capacity);
 	}
@@ -311,23 +318,24 @@ private:
 };
 void testmystring()
 {
-	String s1("aabda");
-	String s2("aabd");
-	/*cout << s1.Getchar() << endl;
+	String s1("abce");
+	String s2("abcde");
+	s1.Insert(3, "d");
+	cout << s1.Getchar()<<endl;
 	s1.PushBack('m');
 	cout << s1.Getchar() << endl;
-	s1.PushBack("wor96969");
+	s1.PushBack("ln");
 	cout << s1.Getchar() << endl;
 	s1.PopBack();
 	cout << s1.Getchar() << endl;
 	s1.Insert(5,'a');
-	cout << s1.Getchar() << endl;*/
+	cout << s1.Getchar() << endl;
 	/*s1.Insert(2,"adaadad");
 	cout << s1.Getchar() << endl;*/
 	/*s1.Erase(2, 2);
 	cout << s1.Getchar() << endl;*/
-	/*cout << s1.Find('l') << endl;*/
-	/*cout << s1.Find("abaaddddd") << endl;*/
-	cout << (s1 == s2) << endl;
+	cout << "位置"<<s1.Find('a') << endl;
+	cout << s1.Find("abaaddddd") << endl;
+	cout << "如果相等返回1:"<<(s1 == s2) << endl;
 
 }
