@@ -122,6 +122,7 @@ public:
 //}
 
 
+int(*fun)(int, int);
 
 int main()
 {
