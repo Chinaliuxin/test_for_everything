@@ -63,7 +63,9 @@ int main()
 {
 	vector<int> v = { 1,-1,0 };
 	sort(v.begin(), v.end(), [](int a, int b)->bool {return a > b; });
-
+	char a[3],b[3];
+	char const* p = a;
+	p = b+1;
 	test(-1);
 	//test_fun(fun1);
 	//test_fun(fun2);
