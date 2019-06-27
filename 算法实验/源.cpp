@@ -36,7 +36,6 @@ void test_4()
 	cout << "-----------N皇后问题----------" << endl;
 	test4::Nqueens::main();
 
-
 }
 int main()
 {
@@ -45,7 +44,6 @@ int main()
 	//test_2();//实验2
 	//test_3();//实验3
 	test_4();//实验4
-
 	cout << "end" << endl;
 
 }
