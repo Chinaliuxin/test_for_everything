@@ -122,6 +122,7 @@
     <ClInclude Include="leetcode.hpp" />
     <ClInclude Include="MP3_test.hpp" />
     <ClInclude Include="string_test.hpp" />
+    <ClInclude Include="treeroot.hpp" />
     <ClInclude Include="year_money.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

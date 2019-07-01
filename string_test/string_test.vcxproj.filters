@@ -35,5 +35,8 @@
     <ClInclude Include="coin.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="treeroot.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
