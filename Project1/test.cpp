@@ -27,6 +27,9 @@ void fun_maxlennum(string str)
 	}
 	cout << ret << endl;
 }
+
+
+//»Øµ÷º¯Êý
 typedef int(*mypoint)(int);
 static int fun1(int num)
 {
@@ -57,10 +60,13 @@ void test(int com)
 	}
 	test_fun(pfun);
 }
+/*--------------------------------------------------------------------------------------------*/
 #include <algorithm>
+#include"shareptr.hpp"
 #include<vector>
 int main()
 {
+	testptr();
 	vector<int> v = { 1,-1,0 };
 	sort(v.begin(), v.end(), [](int a, int b)->bool {return a > b; });
 	char a[3],b[3];

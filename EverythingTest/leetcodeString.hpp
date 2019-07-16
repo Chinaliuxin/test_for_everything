@@ -137,7 +137,7 @@ void testsinglenumber()
 	int number = singleNumber(nums, 7);
 	printf("The single number is %d.\n", number);
 }
-
+//数组左移
 void zuoyiVector(vector <int> & v, int k)//
 {
 	if (v.size() <= 1)
@@ -163,3 +163,58 @@ void testzuoyi()
 		cout << e;
 	}
 }
+
+/*
+对字符串中的所有单词进行倒排。
+
+说明：
+
+1、每个单词是以26个大写或小写英文字母构成；
+
+2、非构成单词的字符均视为单词间隔符；
+
+3、要求倒排后的单词间隔符以一个空格表示；如果原字符串中相邻单词间有多个间隔符时，倒排转换后也只允许出现一个空格间隔符；
+
+4、每个单词最长20个字母；
+*/
+
+#include<iostream>
+#include<string>
+#include<vector>
+#include <algorithm>
+using namespace std;
+//123   45 67  ====>vector[0]=123...
+void func_dancinizhi(string& str) {
+	vector<string> out;
+	out.clear();
+	string temp;
+	for (size_t i = 0; i < str.size(); i++)
+	{
+
+		if (str[i] >= 'a' && str[i] <= 'z' || str[i] >= 'A' && str[i] <= 'Z')
+			temp.push_back(str[i]);
+		else {
+			if (temp.size() > 0)
+			{
+				out.push_back(temp);
+				temp.clear();
+			}
+		}
+	}
+	if (temp.size() > 0)out.push_back(temp);
+	reverse(out.begin(), out.end());
+	for (auto e : out)
+	{
+		cout << e << " ";
+	}
+	cout << endl;
+}
+/*
+int main()
+{
+	string str;
+	while (getline(cin, str)) {
+		func_dancinizhi(str);
+	}
+}
+*/
