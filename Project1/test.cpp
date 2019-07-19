@@ -28,7 +28,7 @@ void fun_maxlennum(string str)
 	cout << ret << endl;
 }
 
-
+//函数指针
 //回调函数
 typedef int(*mypoint)(int);
 static int fun1(int num)
@@ -64,8 +64,24 @@ void test(int com)
 #include <algorithm>
 #include"shareptr.hpp"
 #include<vector>
+#include <set>
+
+
+struct bigger {
+	bool operator()(int a, int b)
+	{
+		return a > b;
+	}
+};
 int main()
 {
+	set<int, bigger()>  myset;
+	myset.insert(1);
+	myset.insert(7);
+	for (auto e : myset)
+	{
+		cout << e;
+	}
 	testptr();
 	vector<int> v = { 1,-1,0 };
 	sort(v.begin(), v.end(), [](int a, int b)->bool {return a > b; });
