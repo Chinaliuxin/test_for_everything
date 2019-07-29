@@ -347,3 +347,50 @@ void testString0318()
 	}
 }
 
+
+
+
+
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ 将两个有序链表合并为一个新的有序链表并返回。新链表是通过拼接给定的两个链表的所有节点组成的。
+ https://leetcode-cn.com/problems/merge-two-sorted-lists/
+ */
+struct lessq {
+	bool operator()(int a, int b)
+	{
+		return a >= b;
+	}
+};
+lessq les;
+class Solution {
+public:
+	ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
+		if (l1 == nullptr)return l2;
+		if (l2 == nullptr)return l1;
+		ListNode ret(-1);
+		ListNode*  rett = &ret;
+		while (l1&&l2)
+		{
+			if (les(l1->val, l2->val))
+			{
+				rett->next = l2;
+				l2 = l2->next;
+			}
+			else
+			{
+				rett->next = l1;
+				l1 = l1->next;
+			}
+			rett = rett->next;
+		}
+		if (l1 == nullptr)rett->next = l2;
+		if (l2 == nullptr)rett->next = l1;
+		return ret.next;
+	}
+};
