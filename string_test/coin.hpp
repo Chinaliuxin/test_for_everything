@@ -3,7 +3,7 @@
 #include<iostream>
 using namespace std;
 class cointest {
-public:
+public://¥’”≤±“
 
 	int coin[3] = { 1,3,5 };
 	int dp[12];

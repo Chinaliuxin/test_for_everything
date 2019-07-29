@@ -119,6 +119,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="shareptr.hpp" />
+    <ClInclude Include="tree.hpp" />
     <ClInclude Include="求坏球.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
