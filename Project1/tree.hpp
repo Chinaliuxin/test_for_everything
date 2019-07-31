@@ -7,6 +7,8 @@
  *     TreeNode *right;
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
+ 给定一个二叉树，返回它的 前序 遍历。
+ https://leetcode-cn.com/problems/binary-tree-preorder-traversal/
  */
 class Solution {
 public:
@@ -25,6 +27,39 @@ public:
 				s.push(cur->right);
 			if (cur->left != nullptr)
 				s.push(cur->left);
+		}
+		return ret;
+	}
+};
+
+
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+	vector<int> inorderTraversal(TreeNode* root) {
+		vector<int> ret;
+		if (root == nullptr)return ret;
+		stack<TreeNode*> s;
+		auto cur = root;
+		while (cur || !s.empty())
+		{
+			while (cur != nullptr)
+			{
+				s.push(cur);
+				cur = cur->left;
+			}
+			cur = s.top();
+			s.pop();
+			ret.push_back(cur->val);
+			cur = cur->right;
 		}
 		return ret;
 	}
