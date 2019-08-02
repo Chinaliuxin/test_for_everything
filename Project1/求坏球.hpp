@@ -144,3 +144,18 @@ int main_zoumigong(int argc, char** argv)
 
 	return 0;
 }
+
+
+class Solution {
+public:
+	double myPow(double x, long long n) {
+		if (n == 0)
+			return 1;
+		if (n < 0)
+			return 1 / myPow(x, -n);
+		double mid = myPow(x, n / 2);
+		if (n & 1)
+			return mid * mid * x;
+		return mid * mid;
+	}
+};
