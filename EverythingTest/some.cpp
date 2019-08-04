@@ -86,6 +86,7 @@ class __declspec(novtable) c
 #include"mystring.hpp"
 int main()
 {
+	queue<int> queue;
 	testmystring();
 	cout << countBitDiff(1999, 2299) << endl;;
 	const char * ch1 = "1234";
