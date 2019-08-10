@@ -257,3 +257,56 @@ void bubbleSort(int a[],int size)
 		}
 	}
 }
+/*
+#include<iostream>
+#include <vector>
+using namespace std;
+
+
+void merge_sort(vector<int>& arr,int l,int r,vector<int>& tmp){
+	if(l >= r) return;//递归终止条件
+
+	int mid =(l + r) >> 1;  //划分边界        这是与快排的本质区别: 快排边界随机界线(不稳定 nlogn)   归并固定界线(稳定 nlogn);
+
+	merge_sort(arr,l,mid,tmp);      //左半边
+	merge_sort(arr,mid + 1,r,tmp);  //右半边
+
+	int k = 0,i = l,j = mid + 1;//双指针起始位置
+
+	while(i <= mid && j <= r)
+		if(arr[i] < arr[j]) tmp[k++] = arr[i++];//左半边小的放左边
+		else tmp[k++] = arr[j++];               //右半边大的放右边
+
+		while(i <= mid) tmp[k++] = arr[i++];    //右半边j到r了   但是i没到mid 然后把i(包括i)后边的贴在tmp后边
+		while(j <= r)   tmp[k++] = arr[j++];    //左半边i到mid了 但是j没到r   然后把j(包括j)后边的贴在tmp后边
+
+		for(int i = l,j = 0;i <= r;i++,j++) arr[i] = tmp[j];//将排好序的代码复制进去 也算是递归的一部分
+		return ;
+	}
+
+
+int main(){
+	int n;
+	cin >> n;
+	vector<int> arr;
+	arr.reserve(n);
+	vector<int> temp;
+	temp.reserve(n);
+	for(int i = 0;i < n;i++){
+		int num;
+		cin>>num;
+		arr.push_back(num);
+		//cin >> arr[i];
+	}
+
+	merge_sort(arr,0,n - 1,temp);
+
+	for(int i = 0;i < n;i++){
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+	return 0;
+
+}
+
+*/
