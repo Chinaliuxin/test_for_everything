@@ -29,5 +29,8 @@
     <ClInclude Include="tree.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="beike.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -118,6 +118,7 @@
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="beike.hpp" />
     <ClInclude Include="shareptr.hpp" />
     <ClInclude Include="tree.hpp" />
     <ClInclude Include="求坏球.hpp" />
