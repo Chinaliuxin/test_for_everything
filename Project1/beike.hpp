@@ -204,3 +204,71 @@ int getHowMany(int n,int m)//长和宽
 {
 	return (1 + m) * m / 2 * (1 + n)*n / 2;
 }
+
+
+//https://www.nowcoder.com/questionTerminal/fae8632cfc64433989720bc01e09f382?orderByHotValue=1&page=1&onlyReference=false
+//然后用二分的思路解决
+
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	long long sum, i, t;
+	scanf("%lld", &sum);
+	int w = to_string(sum).size();
+	for (i = 10 * w; i < sum; i++)
+	{
+		long long s = 0;
+		t = i;
+		while (t)
+		{
+			s += t;
+			t /= 10;
+		}
+		if (s == sum) { printf("%lld", i); return 0; }
+	}
+	printf("-1");
+}
+
+#include<stdio.h>
+#include<iostream>
+typedef   long long L;
+
+using namespace std;
+L   check(L num)
+{
+	L sum = 0;
+	while (num != 0)
+	{
+		sum += num;
+		num = num / 10;
+	}
+	return sum;
+}
+
+int main()
+{
+	L num = 137174210616796;
+	auto hh = check(123456789555123);
+	printf("%lld", check(123456789555123));
+	L left = 0;
+	L right = num + 1;
+	L& key = num;
+	while (left <= right)
+	{
+		L mid = left + ((right - left) >> 1);
+		if (check(mid) == key) { cout << mid << endl; return 0; }
+		if (check(mid) < key)
+		{
+			left = mid + 1;
+		}
+		if (check(mid) > key)
+		{
+			right = mid - 1;
+		}
+	}
+	cout << "-1" << endl;
+	return 0;
+}
