@@ -84,7 +84,7 @@ void  array_point()
 
 }
 
-vector<vector<int> > subsets(vector<int>& v)//求数组的子集
+vector<vector<int> > subsets(vector<int>& v)//求数组的子集,全排列
 {
 	int max =1<< v.size();//比如3个数字的数组  max变为8，
 	vector< vector<int> > ret;
