@@ -16,7 +16,7 @@ public://¥’”≤±“
 			for (int j = 0; coin[j] <= i && j < 3; j++)
 			{
 				if (dp[i - coin[j]] + 1 < dp[i])
-					dp[i] = dp[i - coin[j]] + 1;
+					dp[i] = dp[i - coin[j]] + 1;//a<b  b=a;
 			}
 		}
 	}

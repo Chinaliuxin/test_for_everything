@@ -71,3 +71,32 @@ int main()
 	cout << dp[weight];
 
 }
+//给定一个仅包含数字 2-9 的字符串，返回所有它能表示的字母组合。
+
+//给出数字到字母的映射如下（与电话按键相同）。注意 1 不对应任何字母
+class Solution {
+public:
+	vector<string> letterCombinations(string digits) {
+		vector<string> a={ "abc","def","ghi","jkl","mno","pqrs","tuv","wxyz" };
+		vector<string> c;
+		if (digits.empty())
+			return c;
+		c.push_back("");
+		for (int i = 0; i < digits.size(); i++)
+		{
+			int res = digits[i] - '2';//当前按键对应的字符串索引
+			int len = c.size();     //前一次处理好的字符串数
+			for (int i = 0; i < len; i++)//遍历前一次处理好的字符串
+			{
+				for (auto m : a[res])//遍历按键对应字符
+				{
+					c.push_back(c[i] + m);//将每一种组合放到末端
+				}
+			}
+			c.erase(c.begin(), c.begin() + len);//清除前一次的组合
+		}
+		return c;
+	}
+};
+
+
