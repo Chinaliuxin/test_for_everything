@@ -100,3 +100,15 @@ public:
 };
 
 
+int maxProfit(vector<int> prices,int fee) {
+	//ÂòÈë
+	int buy = -prices[0];
+	//Âô³ö
+	int sell = 0;
+	for (int i = 1; i < prices.size(); i++) {
+		buy = max(buy, sell - prices[i]);
+		sell = max(buy + prices[i] - fee, sell);
+	}
+	return sell;
+}
+
