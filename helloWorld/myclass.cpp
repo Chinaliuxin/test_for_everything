@@ -103,3 +103,25 @@ void testMerge()
 	}
 	cout << '\n';
 }
+
+
+#include<iostream>
+using namespace std;
+int value[4] = { 0,1,3,5 };
+int main()/*我们要对它抽象一下，
+d(i) = min{ d(i - vj) + 1 }，其中i - vj >= 0，vj表示第j个硬币的面值;
+有了状态和状态转移方程，这个问题基本上也就解决了*/
+{
+	int min[12];
+	for (int i = 0; i < 12; i++)
+		min[i] = 100;
+	min[0] = 0;
+	for (int i = 0; i < 12; i++)
+		for (int j = 1; j < 4; j++)
+			if (value[j] <= i && min[i - value[j]] + 1 < min[i])
+				min[i] = min[i - value[j]] + 1;
+	for (int i = 0; i < 12; i++)
+		cout << min[i] << ' ';
+
+	return 0;
+}
