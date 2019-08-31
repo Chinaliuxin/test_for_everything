@@ -21,6 +21,9 @@
     <ClCompile Include="epoll.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="select.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tcpsocket.hpp">
