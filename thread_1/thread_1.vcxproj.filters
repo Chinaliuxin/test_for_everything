@@ -24,6 +24,9 @@
     <ClCompile Include="select.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="tcp_cli.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="tcpsocket.hpp">

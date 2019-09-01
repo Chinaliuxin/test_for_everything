@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="epoll.cpp" />
     <ClCompile Include="select.cpp" />
+    <ClCompile Include="tcp_cli.cpp" />
     <ClCompile Include="test.cpp" />
   </ItemGroup>
   <ItemGroup>
