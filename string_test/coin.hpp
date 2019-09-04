@@ -30,3 +30,26 @@ public://凑硬币
 		return 0;
 	}
 };
+
+
+class Solution {
+public:
+	vector<int> sortArrayByParity(vector<int>& A) {
+		int size = A.size();
+		int L = 0, R = size - 1;
+		while (L < R) {
+			while (L < R && A[L] % 2 == 0) {
+				L++;
+			}
+			while (L < R && A[R] % 2 == 1) {
+				R--;
+			}
+			swap(A[L], A[R]);
+		}
+		return A;
+	}
+};
+
+//给定一个非负整数数组 A，返回一个数组，在该数组中， A 的所有偶数元素之后跟着所有奇数元素。
+
+//你可以返回满足此条件的任何数组作为答案。
