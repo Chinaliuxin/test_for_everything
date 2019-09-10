@@ -32,5 +32,8 @@
     <ClInclude Include="tcpsocket.hpp">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="pool.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
