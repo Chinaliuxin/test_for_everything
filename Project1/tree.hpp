@@ -229,3 +229,22 @@ public:
 		return s;
 	}
 };
+
+int Deapth(Tree * root) {//二叉树的深度
+	if (!root) {
+		return 0;
+	}
+	int m = Deapth(root->Left);
+	int n = Deapth(root->Right);
+	return m > n ? m + 1 : n + 1;
+}
+int LeaveNum(Tree * root) {//二叉树的叶子数
+	if (!root) {
+		return 0;
+	}
+	if (!root->Left && !root->Right) {
+		return 1;
+	}
+	else
+		return LeaveNum(root->Left) + LeaveNum(root->Right);
+}
