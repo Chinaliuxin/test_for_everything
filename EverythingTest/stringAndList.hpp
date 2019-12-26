@@ -141,7 +141,7 @@ public:
 					pre->next = next;
 					next->next = cur;
 					
-					PNode temp = next;
+					PNode tem p = next;
 					next = cur;
 					cur = temp;
 				//}

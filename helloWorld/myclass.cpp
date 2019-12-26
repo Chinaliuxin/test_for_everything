@@ -17,6 +17,7 @@ public:
 		:A(1)
 	{
 		cout << "¹¹ÔìB";
+
 	}
 	int fun()
 	{
